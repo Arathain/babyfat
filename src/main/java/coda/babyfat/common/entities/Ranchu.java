@@ -53,15 +53,19 @@ import java.util.Optional;
 
 public class Ranchu extends Animal implements Bucketable {
 	public static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Byte> TAIL = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.BOOLEAN);
 	public static final Ingredient FOOD_ITEMS = Ingredient.of(BFItems.WATER_LETTUCE.get());
-	public static final int MAX_VARIANTS = 303;
 
 	public Ranchu(EntityType<? extends Animal> type, Level worldIn) {
 		super(type, worldIn);
 		this.lookControl = new SmoothSwimmingLookControl(this, 10);
 		this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.02F, 0.1F, true);
 		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+	}
+
+	public int getTailType() {
+		return 0;
 	}
 
 	@Override
@@ -91,7 +95,14 @@ public class Ranchu extends Animal implements Bucketable {
 		}
 		int i;
 		if(reason == MobSpawnType.SPAWN_EGG){
-			i = worldIn.getRandom().nextInt(302);
+			int base = random.nextInt(5);
+			int pat1 = random.nextInt(64);
+			int pat2 = random.nextInt(64);
+			int baseColour = random.nextInt(25);
+			int c1 = random.nextInt(25);
+			int c2 = random.nextInt(25);
+
+			i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
 		}else{
 			i = worldIn.getRandom().nextInt(3);
 		}
@@ -106,6 +117,7 @@ public class Ranchu extends Animal implements Bucketable {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
+		this.entityData.define(TAIL, (byte)0);
 		this.entityData.define(VARIANT, 0);
 		this.entityData.define(FROM_BUCKET, false);
 	}
@@ -156,6 +168,14 @@ public class Ranchu extends Animal implements Bucketable {
 		this.entityData.set(VARIANT, variant);
 	}
 
+	public int getTail() {
+		return this.entityData.get(TAIL);
+	}
+
+	public void setTail(int variant) {
+		this.entityData.set(TAIL, (byte)variant);
+	}
+
 	@Override
 	public MobType getMobType() {
 		return MobType.WATER;
@@ -170,6 +190,7 @@ public class Ranchu extends Animal implements Bucketable {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putInt("Variant", getVariant());
+		compound.putByte("Tail", (byte)getTail());
 		compound.putBoolean("FromBucket", this.isFromBucket());
 		compound.putBoolean("Bucketed", this.fromBucket());
 	}
@@ -177,7 +198,8 @@ public class Ranchu extends Animal implements Bucketable {
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
-		setVariant(Mth.clamp(compound.getInt("Variant"), 0, MAX_VARIANTS - 1));
+		setVariant(compound.getInt("Variant"));
+		setTail(compound.getInt("Tail"));
 		this.setFromBucket(compound.getBoolean("FromBucket"));
 		this.setFromBucket(compound.getBoolean("Bucketed"));
 	}
@@ -299,27 +321,14 @@ public class Ranchu extends Animal implements Bucketable {
 			RandomSource rand = this.getRandom();
 		if (ranchuB instanceof Ranchu) {
 			// Feral + Feral
-			if (this.getVariant() <= 2 && ((Ranchu) ranchuB).getVariant() <= 2) {
-				if (rand.nextFloat() < 0.15) {
-					child.setVariant(rand.nextInt(Ranchu.MAX_VARIANTS - 3) + 3);
-				} else {
-					child.setVariant(rand.nextInt(3) + 1);
-				}
-			}
+			int base = random.nextInt(5);
+			int pat1 = random.nextInt(64);
+			int pat2 = random.nextInt(64);
+			int baseColour = random.nextInt(25);
+			int c1 = random.nextInt(25);
+			int c2 = random.nextInt(25);
 
-			// Fancy + Fancy
-			else if (this.getVariant() > 2 && ((Ranchu) ranchuB).getVariant() > 2) {
-				child.setVariant(rand.nextInt(Ranchu.MAX_VARIANTS - 3) + 3);
-			}
-
-			// Feral + Fancy
-			else if (this.getVariant() <= 2 || ((Ranchu) ranchuB).getVariant() <= 2 && this.getVariant() > 2 || ((Ranchu) ranchuB).getVariant() > 2) {
-				if (rand.nextBoolean()) {
-					child.setVariant(rand.nextInt(Ranchu.MAX_VARIANTS - 3) + 3);
-				} else {
-					child.setVariant(rand.nextInt(3) + 1);
-				}
-			}
+			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
 		}
 		child.setPersistenceRequired();
 

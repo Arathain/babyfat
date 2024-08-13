@@ -7,6 +7,7 @@ import coda.babyfat.registry.BFBlocks;
 import coda.babyfat.registry.BFEntities;
 import coda.babyfat.registry.BFFeatures;
 import coda.babyfat.registry.BFItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.item.CreativeModeTab;
@@ -47,6 +48,10 @@ public class BabyFat {
 		BFBlocks.BLOCKS.register(bus);
 	}
 
+	public static ResourceLocation id(String path) {
+		return new ResourceLocation(BabyFat.MOD_ID, path);
+	}
+
 	private void registerEntityAttributes(EntityAttributeCreationEvent event) {
 		event.put(BFEntities.RANCHU.get(), Ranchu.createAttributes().build());
 	}
@@ -69,30 +74,17 @@ public class BabyFat {
 			Ranchu ranchuA = (Ranchu) event.getParentA();
 			Ranchu ranchuB = (Ranchu) event.getParentB();
 			Ranchu child = (Ranchu) event.getChild();
-			RandomSource rand = ranchuA.getRandom();
+			RandomSource random = ranchuA.getRandom();
 
 			// Feral + Feral
-			if (ranchuA.getVariant() <= 2 && ranchuB.getVariant() <= 2) {
-				if (rand.nextFloat() < 0.15) {
-					child.setVariant(rand.nextInt(Ranchu.MAX_VARIANTS - 3) + 3);
-				} else {
-					child.setVariant(rand.nextInt(3) + 1);
-				}
-			}
+			int base = random.nextInt(5);
+			int pat1 = random.nextInt(64);
+			int pat2 = random.nextInt(64);
+			int baseColour = random.nextInt(25);
+			int c1 = random.nextInt(25);
+			int c2 = random.nextInt(25);
 
-			// Fancy + Fancy
-			else if (ranchuA.getVariant() > 2 && ranchuB.getVariant() > 2) {
-				child.setVariant(rand.nextInt(Ranchu.MAX_VARIANTS - 3) + 3);
-			}
-
-			// Feral + Fancy
-			else if (ranchuA.getVariant() <= 2 || ranchuB.getVariant() <= 2 && ranchuA.getVariant() > 2 || ranchuB.getVariant() > 2) {
-				if (rand.nextBoolean()) {
-					child.setVariant(rand.nextInt(Ranchu.MAX_VARIANTS - 3) + 3);
-				} else {
-					child.setVariant(rand.nextInt(3) + 1);
-				}
-			}
+			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
 
 			child.copyPosition(ranchuA);
 			child.setBaby(true);
