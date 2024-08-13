@@ -1,3 +1,15 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url = "https://repo.spongepowered.org/repository/maven-public/" }
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath group: "org.spongepowered", name: "mixingradle", version: "0.7-SNAPSHOT"
+    }
+}
 plugins {
     id 'eclipse'
     id 'idea'
@@ -6,8 +18,11 @@ plugins {
     id 'org.parchmentmc.librarian.forgegradle' version '1.+'
 }
 
-version = mod_version
-group = mod_group_id
+apply plugin: 'net.minecraftforge.gradle'
+// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+apply plugin: 'eclipse'
+apply plugin: 'maven-publish'
+apply plugin: "org.spongepowered.mixin"
 
 base {
     archivesName = mod_id
@@ -31,6 +46,12 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
+    mappings channel: 'official', version: '1.19.2'
+
+    minecraft {
+        accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    }
+    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     mappings channel: mapping_channel, version: mapping_version
 
     // When true, this property will have all Eclipse/IntelliJ IDEA run configurations run the "prepareX" task for the given run configuration before launching the game.
@@ -118,6 +139,16 @@ repositories {
     maven { url 'https://maven.blamejared.com' }
 }
 
+mixin {
+    add sourceSets.main, "babyfat.refmap.json"
+
+    // Sets up the mixin config; this gets added to run configurations and the manifest in the final jar
+    config "babyfat.mixins.json"
+
+    // Enables exporting mixin-changed classes to .mixin.out in the run folder
+    debug.export = true
+}
+
 dependencies {
     // Specify the version of Minecraft to use.
     // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
@@ -128,6 +159,8 @@ dependencies {
 
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.20.1-84-FORGE")
+
+    annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
@@ -153,6 +186,7 @@ tasks.named('processResources', ProcessResources).configure {
 tasks.named('jar', Jar).configure {
     manifest {
         attributes([
+                "MixinConfigs"            : "babyfat.mixins.json",
                 'Specification-Title'     : mod_id,
                 'Specification-Vendor'    : mod_authors,
                 'Specification-Version'   : '1', // We are version 1 of ourselves

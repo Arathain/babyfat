@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "codyhuh.babyfat.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "babyfat.refmap.json",
+  "mixins": [
+  ],
+  "client": [
+
+  ],
+  "minVersion": "0.8.5"
+}
