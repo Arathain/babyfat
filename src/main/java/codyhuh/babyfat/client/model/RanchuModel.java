@@ -153,8 +153,10 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 			this.body.xRot = headPitch * ((float) Math.PI / 180F);
 			this.body.yRot = netHeadYaw * ((float) Math.PI / 180F);
 			this.tailBase.yRot = Mth.cos(time * Mth.TWO_PI) * Mth.HALF_PI/6f;
-			this.pectoralfinright.zRot = Mth.sin(time * Mth.TWO_PI * 2f) * Mth.HALF_PI/6f;
-			this.pectoralfinleft.zRot = -Mth.sin(time * Mth.TWO_PI * 2f) * Mth.HALF_PI/6f;
+			float m = Mth.sin(time * Mth.TWO_PI * 2f + 1);
+			m = (m * m)-0.5f;
+			this.pectoralfinright.zRot = m * 2 * Mth.HALF_PI/6f;
+			this.pectoralfinleft.zRot = -m * 2 * Mth.HALF_PI/6f;
 			for(ModelPart p : tgtr) {
 				p.yRot = 0;
 				p.xRot = 0;
