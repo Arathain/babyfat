@@ -64,10 +64,6 @@ public class Ranchu extends Animal implements Bucketable {
 		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
 	}
 
-	public int getTailType() {
-		return 0;
-	}
-
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
@@ -94,18 +90,14 @@ public class Ranchu extends Animal implements Bucketable {
 			return spawnDataIn;
 		}
 		int i;
-		if(reason == MobSpawnType.SPAWN_EGG){
-			int base = random.nextInt(5);
-			int pat1 = random.nextInt(64);
-			int pat2 = random.nextInt(64);
-			int baseColour = random.nextInt(25);
-			int c1 = random.nextInt(25);
-			int c2 = random.nextInt(25);
+		int base = random.nextInt(5);
+		int pat1 = random.nextInt(64);
+		int pat2 = random.nextInt(64);
+		int baseColour = random.nextInt(25);
+		int c1 = random.nextInt(25);
+		int c2 = random.nextInt(25);
 
-			i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
-		}else{
-			i = worldIn.getRandom().nextInt(3);
-		}
+		i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
 		this.setTail(random.nextInt(6));
 		this.setVariant(i);
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);

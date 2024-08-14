@@ -48,18 +48,18 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 		this.tailFins = tailBase.getChild("tailFins");
 		this.tailbuttonleft = tailFins.getChild("tb1").getChild("tailbuttonleft");
 		this.tailbuttonright = tailFins.getChild("tb2").getChild("tailbuttonright");
-		this.tailfanleft = tailFins.getChild("tailfanleft");
-		this.tailfanright = tailFins.getChild("tailfanright");
-		this.tailphoenixleft = tailFins.getChild("tailphoenixleft");
-		this.tailphoenixright = tailFins.getChild("tailphoenixright");
-		this.tailazureleft = tailFins.getChild("tailazureleft");
-		this.tailazureright = tailFins.getChild("tailazureright");
-		this.tailonyxleft = tailFins.getChild("tailonyxleft");
-		this.tailonyxright = tailFins.getChild("tailonyxright");
-		this.tailopalleft = tailFins.getChild("tailopalleft");
-		this.tailopalright = tailFins.getChild("tailopalright");
-		this.tailopalsideleft = tailFins.getChild("tailopalsideleft");
-		this.tailopalsideright = tailFins.getChild("tailopalsideright");
+		this.tailfanleft = tailFins.getChild("tb3").getChild("tailfanleft");
+		this.tailfanright = tailFins.getChild("tb4").getChild("tailfanright");
+		this.tailphoenixleft = tailFins.getChild("tb5").getChild("tailphoenixleft");
+		this.tailphoenixright = tailFins.getChild("tb6").getChild("tailphoenixright");
+		this.tailazureleft = tailFins.getChild("tb7").getChild("tailazureleft");
+		this.tailazureright = tailFins.getChild("tb8").getChild("tailazureright");
+		this.tailonyxleft = tailFins.getChild("tb9").getChild("tailonyxleft");
+		this.tailonyxright = tailFins.getChild("tb10").getChild("tailonyxright");
+		this.tailopalleft = tailFins.getChild("tb11").getChild("tailopalleft");
+		this.tailopalright = tailFins.getChild("tb12").getChild("tailopalright");
+		this.tailopalsideleft = tailFins.getChild("tb13").getChild("tailopalsideleft");
+		this.tailopalsideright = tailFins.getChild("tb14").getChild("tailopalsideright");
 		this.headtop = body.getChild("headtop");
 		this.headbottom = headtop.getChild("headbottom");
 		this.pectoralfinleft = body.getChild("pectoralfinleft");
@@ -80,29 +80,29 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 
 		PartDefinition tailbuttonright = tailFins.addOrReplaceChild("tb2", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailbuttonright", CubeListBuilder.create().texOffs(-9, 21).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
-		PartDefinition tailfanleft = tailFins.addOrReplaceChild("tailfanleft", CubeListBuilder.create().texOffs(13, 31).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailfanleft = tailFins.addOrReplaceChild("tb3", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailfanleft", CubeListBuilder.create().texOffs(13, 31).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.ZERO);
 
-		PartDefinition tailfanright = tailFins.addOrReplaceChild("tailfanright", CubeListBuilder.create().texOffs(-9, 31).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailfanright = tailFins.addOrReplaceChild("tb4", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailfanright", CubeListBuilder.create().texOffs(-9, 31).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
-		PartDefinition tailphoenixleft = tailFins.addOrReplaceChild("tailphoenixleft", CubeListBuilder.create().texOffs(13, 41).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailphoenixleft = tailFins.addOrReplaceChild("tb5", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailphoenixleft", CubeListBuilder.create().texOffs(13, 41).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.ZERO);
 
-		PartDefinition tailphoenixright = tailFins.addOrReplaceChild("tailphoenixright", CubeListBuilder.create().texOffs(-9, 41).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailphoenixright = tailFins.addOrReplaceChild("tb6", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailphoenixright", CubeListBuilder.create().texOffs(-9, 41).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
-		PartDefinition tailazureleft = tailFins.addOrReplaceChild("tailazureleft", CubeListBuilder.create().texOffs(13, 51).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailazureleft = tailFins.addOrReplaceChild("tb7", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailazureleft", CubeListBuilder.create().texOffs(13, 51).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.ZERO);
 
-		PartDefinition tailazureright = tailFins.addOrReplaceChild("tailazureright", CubeListBuilder.create().texOffs(-9, 51).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailazureright = tailFins.addOrReplaceChild("tb8", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailazureright", CubeListBuilder.create().texOffs(-9, 51).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
-		PartDefinition tailonyxleft = tailFins.addOrReplaceChild("tailonyxleft", CubeListBuilder.create().texOffs(11, 60).addBox(-11.0F, 0.0F, -4.0F, 11.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailonyxleft = tailFins.addOrReplaceChild("tb9", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailonyxleft", CubeListBuilder.create().texOffs(11, 60).addBox(-11.0F, 0.0F, -4.0F, 11.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.ZERO);
 
-		PartDefinition tailonyxright = tailFins.addOrReplaceChild("tailonyxright", CubeListBuilder.create().texOffs(-9, 60).mirror().addBox(-11.0F, 0.0F, -4.0F, 11.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailonyxright = tailFins.addOrReplaceChild("tb10", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailonyxright", CubeListBuilder.create().texOffs(-9, 60).mirror().addBox(-11.0F, 0.0F, -4.0F, 11.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
-		PartDefinition tailopalleft = tailFins.addOrReplaceChild("tailopalleft", CubeListBuilder.create().texOffs(13, 71).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailopalleft = tailFins.addOrReplaceChild("tb11", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailopalleft", CubeListBuilder.create().texOffs(13, 71).addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)), PartPose.ZERO);
 
-		PartDefinition tailopalright = tailFins.addOrReplaceChild("tailopalright", CubeListBuilder.create().texOffs(-9, 71).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailopalright = tailFins.addOrReplaceChild("tb12", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailopalright", CubeListBuilder.create().texOffs(-9, 71).mirror().addBox(-10.0F, 0.0F, -4.0F, 10.0F, 0.0F, 9.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
-		PartDefinition tailopalsideleft = tailFins.addOrReplaceChild("tailopalsideleft", CubeListBuilder.create().texOffs(22, 80).addBox(-10.0F, -1.0F, 0.0F, 10.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailopalsideleft = tailFins.addOrReplaceChild("tb13", CubeListBuilder.create(), PartPose.offsetAndRotation(0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailopalsideleft", CubeListBuilder.create().texOffs(22, 80).addBox(-10.0F, -1.0F, 0.0F, 10.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.ZERO);
 
-		PartDefinition tailopalsideright = tailFins.addOrReplaceChild("tailopalsideright", CubeListBuilder.create().texOffs(0, 80).mirror().addBox(-10.0F, -5.0F, 0.0F, 10.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F));
+		PartDefinition tailopalsideright = tailFins.addOrReplaceChild("tb14", CubeListBuilder.create(), PartPose.offsetAndRotation(-0.5F, 1.0F, 1.5F, 0.0F, 1.5708F, -1.5708F)).addOrReplaceChild("tailopalsideright", CubeListBuilder.create().texOffs(0, 80).mirror().addBox(-10.0F, -5.0F, 0.0F, 10.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)).mirror(false), PartPose.ZERO);
 
 		PartDefinition headtop = body.addOrReplaceChild("headtop", CubeListBuilder.create().texOffs(0, 11).addBox(-2.5F, -2.0F, -3.0F, 5.0F, 4.0F, 3.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, -1.0F, -2.5F));
 
@@ -139,8 +139,8 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 		this.tailopalright.visible = false;
 		this.tailopalsideleft.visible = false;
 		this.tailopalsideright.visible = false;
-		ModelPart[] tgtr = chooseTargetRight(entityIn.getTailType());
-		ModelPart[] tgtl = chooseTargetLeft(entityIn.getTailType());
+		ModelPart[] tgtr = chooseTargetRight(entityIn.getTail());
+		ModelPart[] tgtl = chooseTargetLeft(entityIn.getTail());
 		for(ModelPart p : tgtr) {
 			p.visible = true;
 		}
@@ -152,18 +152,18 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 		if (entityIn.isInWater()) {
 			this.body.xRot = headPitch * ((float) Math.PI / 180F);
 			this.body.yRot = netHeadYaw * ((float) Math.PI / 180F);
-			this.tailBase.yRot = Mth.cos(time * Mth.TWO_PI/2f) * Mth.HALF_PI/6f;
+			this.tailBase.yRot = Mth.cos(time * Mth.TWO_PI) * Mth.HALF_PI/6f;
 			this.pectoralfinright.zRot = Mth.sin(time * Mth.TWO_PI * 2f) * Mth.HALF_PI/6f;
 			this.pectoralfinleft.zRot = -Mth.sin(time * Mth.TWO_PI * 2f) * Mth.HALF_PI/6f;
 			for(ModelPart p : tgtr) {
 				p.yRot = 0;
 				p.xRot = 0;
-				p.zRot = Mth.sin(time * Mth.TWO_PI/2f) * Mth.HALF_PI/6f;
+				p.zRot = -Mth.sin(time * Mth.TWO_PI) * Mth.HALF_PI/6f;
 			}
 			for(ModelPart p : tgtl) {
 				p.yRot = 0;
 				p.xRot = 0;
-				p.zRot = Mth.sin(time * Mth.TWO_PI/2f) * Mth.HALF_PI/6f;
+				p.zRot = -Mth.sin(time * Mth.TWO_PI) * Mth.HALF_PI/6f;
 			}
 		}
 	}

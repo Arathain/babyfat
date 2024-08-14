@@ -152,7 +152,7 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 		int pat1 = (2*2*2*2*2*2-1 & ego >> 3);
 		int pat2 = (2*2*2*2*2*2-1 & ego >> 3+6);
 		int c1 = (2*2*2*2*2-1 & ego >> 3+6+6+5);
-		int c2 = (2*2*2*2*2-1 & ego >> 3+6+6+5);
+		int c2 = (2*2*2*2*2-1 & ego >> 3+6+6+5+5);
 		int baseColour = (2*2*2*2*2-1 & ego >> 3+6+6);
 		if(!TEXTURE_LOOKUP.containsKey(ego)) {
 			TextureManager t = Minecraft.getInstance().getTextureManager();
@@ -252,8 +252,8 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 	@Override
 	protected void setupRotations(T entity, PoseStack posestack, float ageInTicks, float rotationYaw, float partialTicks) {
 		super.setupRotations(entity, posestack, ageInTicks, rotationYaw, partialTicks);
-		float f = Mth.cos(ageInTicks / 20f * Mth.TWO_PI/2f) * Mth.HALF_PI/11f;
-        posestack.mulPose(Axis.YP.rotationDegrees(f));
+		float f = -Mth.cos(ageInTicks / 20f * Mth.TWO_PI) * Mth.HALF_PI/11f;
+        posestack.mulPose(Axis.YP.rotation(f));
 		if (entity.isAddedToWorld() && !entity.isInWater()) {
 			posestack.translate(0.1F, 0.1F, -0.1F);
 			posestack.mulPose(Axis.ZP.rotationDegrees(90.0F));
