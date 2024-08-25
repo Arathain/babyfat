@@ -164,24 +164,25 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 
 				colourImage(cbImage, baseImage);
 			}
+			if(base != 4) {
+				AbstractTexture p1t = t.getTexture(TEXTURE_PATTERNS[pat1]);
+				NativeImage p1Image = loadImage(p1t);
+				AbstractTexture c1t = t.getTexture(TEXTURE_COLOURS[c1]);
+				NativeImage c1Image = loadImage(c1t);
 
-			AbstractTexture p1t = t.getTexture(TEXTURE_PATTERNS[pat1]);
-			NativeImage p1Image = loadImage(p1t);
-			AbstractTexture c1t = t.getTexture(TEXTURE_COLOURS[c1]);
-			NativeImage c1Image = loadImage(c1t);
+				colourImage(c1Image, p1Image);
 
-			colourImage(c1Image, p1Image);
+				overlayImage(p1Image, baseImage);
 
-			overlayImage(p1Image, baseImage);
+				AbstractTexture p2t = t.getTexture(TEXTURE_PATTERNS[pat2]);
+				NativeImage p2Image = loadImage(p2t);
+				AbstractTexture c2t = t.getTexture(TEXTURE_COLOURS[c2]);
+				NativeImage c2Image = loadImage(c2t);
 
-			AbstractTexture p2t = t.getTexture(TEXTURE_PATTERNS[pat2]);
-			NativeImage p2Image = loadImage(p2t);
-			AbstractTexture c2t = t.getTexture(TEXTURE_COLOURS[c2]);
-			NativeImage c2Image = loadImage(c2t);
+				colourImage(c2Image, p2Image);
 
-			colourImage(c2Image, p2Image);
-
-			overlayImage(p2Image, baseImage);
+				overlayImage(p2Image, baseImage);
+			}
 
 			ResourceLocation loc = id("ranchu_" + ego);
 			t.register(loc, new DynamicTexture(baseImage));

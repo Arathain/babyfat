@@ -50,6 +50,7 @@ import net.minecraft.world.phys.Vec3;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public class Ranchu extends Animal implements Bucketable {
 	public static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.INT);
@@ -86,11 +87,11 @@ public class Ranchu extends Animal implements Bucketable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
 
-		if (reason == MobSpawnType.BUCKET) {
+		if (reason == MobSpawnType.BUCKET || reason == MobSpawnType.BREEDING) {
 			return spawnDataIn;
 		}
 		int i;
-		int base = random.nextInt(5);
+		int base = reason == MobSpawnType.SPAWN_EGG ? random.nextInt(5) : 4;
 		int pat1 = random.nextInt(64);
 		int pat2 = random.nextInt(64);
 		int baseColour = random.nextInt(25);
@@ -312,14 +313,18 @@ public class Ranchu extends Animal implements Bucketable {
 	public Ranchu getBreedOffspring(ServerLevel p_241840_1_, AgeableMob ranchuB) {
 			Ranchu child = BFEntities.RANCHU.get().create(p_241840_1_);
 			RandomSource rand = this.getRandom();
-		if (ranchuB instanceof Ranchu) {
+		if (ranchuB instanceof Ranchu r) {
 			// Feral + Feral
-			int base = random.nextInt(5);
+			int base = random.nextInt(1);
 			int pat1 = random.nextInt(64);
 			int pat2 = random.nextInt(64);
-			int baseColour = random.nextInt(25);
-			int c1 = random.nextInt(25);
-			int c2 = random.nextInt(25);
+			int[] mutated = new int[]{-1};
+			int baseColour = composeColour(this.getBaseColour(), r.getBaseColour(), rand, c -> mutated[0] = c.ordinal());
+			int c1 = composeColour(this.getFirstPatternColour(), r.getFirstPatternColour(), rand, c -> mutated[0] = c.ordinal());
+			int c2 = composeColour(this.getSecondPatternColour(), r.getSecondPatternColour(), rand, c -> mutated[0] = c.ordinal());
+			if(mutated[0] != -1) {
+				baseColour = c1 = c2 = mutated[0];
+			}
 
 			child.setTail(random.nextInt(6));
 			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
@@ -328,6 +333,35 @@ public class Ranchu extends Animal implements Bucketable {
 
 		return child;
 	}
+
+	public static int composeColour(RanchuSexResolver.RanchuColour a, RanchuSexResolver.RanchuColour b, RandomSource r, Consumer<RanchuSexResolver.RanchuColour> m) {
+		return RanchuSexResolver.getInstance().lookupSuperposition(a,b).collapse(a,b,r,m).ordinal();
+	}
+
+	public static int pickPattern(Ranchu a, Ranchu b, RandomSource r, boolean two) {
+		int ego1 = a.getVariant();
+		int ego2 = b.getVariant();
+		if(r.nextFloat() > 0.9) {
+
+		}
+		int offs = two ? 9 : 3;
+		return r.nextBoolean() ? (2*2*2*2*2*2-1 & ego1 >> offs) : (2*2*2*2*2*2-1 & ego2 >> offs);
+	}
+
+
+	public RanchuSexResolver.RanchuColour getBaseColour() {
+		int ego = this.getVariant();
+		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6)];
+	}
+	public RanchuSexResolver.RanchuColour getFirstPatternColour() {
+		int ego = this.getVariant();
+		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5)];
+	}
+	public RanchuSexResolver.RanchuColour getSecondPatternColour() {
+		int ego = this.getVariant();
+		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5 + 5)];
+	}
+
 
 	@Override
 	protected SoundEvent getSwimSound() {

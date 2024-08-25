@@ -61,7 +61,7 @@ public class RanchuBreedGoal extends Goal {
 		this.animal.getLookControl().setLookAt(this.targetMate, 10.0F, (float) this.animal.getMaxHeadXRot());
 		this.animal.getNavigation().moveTo(this.targetMate, this.moveSpeed);
 		++this.spawnBabyDelay;
-		if (this.spawnBabyDelay >= 60 && this.animal.distanceToSqr(this.targetMate) < 9.0D) {
+		if (this.spawnBabyDelay >= 10 && this.animal.distanceToSqr(this.targetMate) < 9.0D) {
 			this.spawnBaby();
 		}
 		if (this.animal.tickCount % 20 == 0) {

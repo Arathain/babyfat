@@ -1,6 +1,7 @@
 package codyhuh.babyfat;
 
 import codyhuh.babyfat.common.entities.Ranchu;
+import codyhuh.babyfat.common.entities.RanchuSexResultWatchpoint;
 import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
 import codyhuh.babyfat.registry.BFItems;
@@ -11,9 +12,11 @@ import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.living.BabyEntitySpawnEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -21,6 +24,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import java.util.ArrayList;
 import java.util.List;
 
+@Mod.EventBusSubscriber
 @Mod(BabyFat.MOD_ID)
 public class BabyFat {
 	public static final String MOD_ID = "babyfat";
@@ -56,6 +60,12 @@ public class BabyFat {
 			ComposterBlock.COMPOSTABLES.put(BFItems.WATER_LETTUCE.get(), 0.65F);
 		});
 	}
+
+	@SubscribeEvent
+	public static void registerListeners(AddReloadListenerEvent event) {
+		event.addListener(new RanchuSexResultWatchpoint());
+	}
+
 
 	private void onRanchuBreed(BabyEntitySpawnEvent event) {
 		if (event.getParentA() instanceof Ranchu && event.getParentB() instanceof Ranchu) {

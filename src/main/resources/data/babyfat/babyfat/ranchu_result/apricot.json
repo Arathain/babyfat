@@ -1,0 +1,10 @@
+{
+  "colour": "apricot",
+  "crosses": [
+    {
+      "colour_1": "bitumen",
+      "colour_2": "copper",
+      "weight": 1.0
+    }
+  ]
+}
