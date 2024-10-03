@@ -61,7 +61,7 @@ public class RanchuSexResolver {
         public RanchuColour collapse(RanchuColour a, RanchuColour b, RandomSource random, Consumer<RanchuColour> mutationCallback) {
             float index = random.nextFloat() * sexChances.size();
             float sum = sexChances.values().stream().reduce(0.0f, Float::sum);
-            if(index > sum) {
+            if(index > sum || sexChances.isEmpty()) {
                 return random.nextBoolean() ? b : a;
             }
 
