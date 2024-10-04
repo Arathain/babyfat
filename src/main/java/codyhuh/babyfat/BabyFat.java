@@ -36,7 +36,7 @@ public class BabyFat {
 
 		bus.addListener(this::registerEntityAttributes);
 		bus.addListener(this::registerCommon);
-		forgeBus.addListener(this::onRanchuBreed);
+		//forgeBus.addListener(this::onRanchuBreed);
 
 		BFItems.ITEMS.register(bus);
 		BFEntities.ENTITIES.register(bus);
@@ -68,26 +68,26 @@ public class BabyFat {
 
 
 	private void onRanchuBreed(BabyEntitySpawnEvent event) {
-		if (event.getParentA() instanceof Ranchu && event.getParentB() instanceof Ranchu) {
-			Ranchu ranchuA = (Ranchu) event.getParentA();
-			Ranchu ranchuB = (Ranchu) event.getParentB();
-			Ranchu child = (Ranchu) event.getChild();
-			RandomSource random = ranchuA.getRandom();
-
-			// Feral + Feral
-			int base = random.nextInt(5);
-			int pat1 = random.nextInt(64);
-			int pat2 = random.nextInt(64);
-			int baseColour = random.nextInt(25);
-			int c1 = random.nextInt(25);
-			int c2 = random.nextInt(25);
-
-			child.setTail(random.nextInt(6));
-			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
-
-			child.copyPosition(ranchuA);
-			child.setBaby(true);
-			ranchuA.getCommandSenderWorld().addFreshEntity(child);
-		}
+//		if (event.getParentA() instanceof Ranchu && event.getParentB() instanceof Ranchu) {
+//			Ranchu ranchuA = (Ranchu) event.getParentA();
+//			Ranchu ranchuB = (Ranchu) event.getParentB();
+//			Ranchu child = (Ranchu) event.getChild();
+//			RandomSource random = ranchuA.getRandom();
+//
+//			// Feral + Feral
+//			int base = random.nextInt(5);
+//			int pat1 = random.nextInt(64);
+//			int pat2 = random.nextInt(64);
+//			int baseColour = random.nextInt(25);
+//			int c1 = random.nextInt(25);
+//			int c2 = random.nextInt(25);
+//
+//			child.setTail(random.nextInt(6));
+//			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
+//
+//			child.copyPosition(ranchuA);
+//			child.setBaby(true);
+//			ranchuA.getCommandSenderWorld().addFreshEntity(child);
+//		}
 	}
 }

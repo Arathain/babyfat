@@ -91,13 +91,14 @@ public class Ranchu extends Animal implements Bucketable {
 		if (reason == MobSpawnType.BUCKET || reason == MobSpawnType.BREEDING) {
 			return spawnDataIn;
 		}
+		int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
 		int i;
-		int base = reason == MobSpawnType.SPAWN_EGG ? random.nextBoolean() ? 0 : 4 : 4;
+		int base = 4;
 		int pat1 = random.nextInt(64);
 		int pat2 = random.nextInt(64);
-		int baseColour = random.nextInt(5);
-		int c1 = random.nextInt(4);
-		int c2 = random.nextInt(4);
+		int baseColour = wCIndex;
+		int c1 = wCIndex;
+		int c2 = wCIndex;
 
 		i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
 		this.setTail(random.nextInt(6));
@@ -352,9 +353,11 @@ public class Ranchu extends Animal implements Bucketable {
 	public static int pickPattern(Ranchu a, Ranchu b, RandomSource r, boolean two) {
 		int ego1 = a.getVariant();
 		int ego2 = b.getVariant();
+
 		if(r.nextFloat() > 0.9) {
 			return r.nextInt(32);
 		}
+
 		int offs = two ? 9 : 3;
 		return r.nextBoolean() ? (2*2*2*2*2*2-1 & ego1 >> offs) : (2*2*2*2*2*2-1 & ego2 >> offs);
 	}
@@ -364,10 +367,12 @@ public class Ranchu extends Animal implements Bucketable {
 		int ego = this.getVariant();
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6)];
 	}
+
 	public RanchuSexResolver.RanchuColour getFirstPatternColour() {
 		int ego = this.getVariant();
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5)];
 	}
+
 	public RanchuSexResolver.RanchuColour getSecondPatternColour() {
 		int ego = this.getVariant();
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5 + 5)];
