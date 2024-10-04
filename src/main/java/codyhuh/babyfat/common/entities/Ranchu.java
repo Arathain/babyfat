@@ -1,5 +1,6 @@
 package codyhuh.babyfat.common.entities;
 
+import codyhuh.babyfat.BabyFat;
 import codyhuh.babyfat.common.entities.goal.RanchuBreedGoal;
 import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
@@ -88,7 +89,7 @@ public class Ranchu extends Animal implements Bucketable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
 
-		if (reason == MobSpawnType.BUCKET || reason == MobSpawnType.BREEDING) {
+		if (getVariant() != -1) {
 			return spawnDataIn;
 		}
 		int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
@@ -114,7 +115,7 @@ public class Ranchu extends Animal implements Bucketable {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(TAIL, (byte)0);
-		this.entityData.define(VARIANT, 0);
+		this.entityData.define(VARIANT, -1);
 		this.entityData.define(FROM_BUCKET, false);
 	}
 
@@ -328,7 +329,8 @@ public class Ranchu extends Animal implements Bucketable {
 				baseColour = c1 = c2 = mutated[0];
 				base = 0;
 			}
-
+			BabyFat.LOGGER.info("Child conceived: \n" + "base: " + base + "\npattern 1: " + pat1 + "\npattern 2: " + pat2 + "\nbasecolour: " + baseColour + getColourName(baseColour)
+			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
 			child.setTail(random.nextInt(6));
 			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
 		}
@@ -336,12 +338,17 @@ public class Ranchu extends Animal implements Bucketable {
 
 		return child;
 	}
+
+	public static String getColourName(int i) {
+		return " (" + RanchuSexResolver.RanchuColour.values()[i].name().toLowerCase() + ")";
+	}
+
 	public static int pickBase(Ranchu a, Ranchu b, RandomSource r) {
 		int out = 0;
 		int ego1 = a.getVariant();
 		int ego2 = b.getVariant();
 		if((2*2*2-1 & ego1) == (2*2*2-1 & ego2) && (2*2*2-1 & ego2) == 4) {
-			out = r.nextInt(4) == 0 ? 4 : 0;
+			//out = r.nextInt(4) == 0 ? 4 : 0;
 		}
 		return out;
 	}

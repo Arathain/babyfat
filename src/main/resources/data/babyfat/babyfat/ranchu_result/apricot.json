@@ -2,8 +2,36 @@
   "colour": "apricot",
   "crosses": [
     {
-      "colour_1": "bitumen",
-      "colour_2": "copper",
+      "colour_1": "wild",
+      "colour_2": "wild",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "ivory",
+      "colour_2": "syrup",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "pale",
+      "colour_2": "rust",
+      "weight": 1.0
+    },
+
+    {
+      "colour_1": "pearl",
+      "colour_2": "syrup",
+      "weight": 1.0
+    },
+
+    {
+      "colour_1": "gold",
+      "colour_2": "pyrite",
+      "weight": 1.0
+    },
+
+    {
+      "colour_1": "ruby",
+      "colour_2": "gold",
       "weight": 1.0
     }
   ]

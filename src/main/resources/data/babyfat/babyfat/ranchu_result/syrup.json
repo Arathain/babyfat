@@ -1,0 +1,35 @@
+{
+  "colour": "syrup",
+  "crosses": [
+    {
+      "colour_1": "wild",
+      "colour_2": "wild",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "rust",
+      "colour_2": "pyrite",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "rust",
+      "colour_2": "pearl",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "chocolate",
+      "colour_2": "pale",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "chocolate",
+      "colour_2": "redwood",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "chocolate",
+      "colour_2": "electrum",
+      "weight": 1.0
+    }
+  ]
+}

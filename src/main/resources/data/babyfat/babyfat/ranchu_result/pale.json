@@ -1,0 +1,40 @@
+{
+  "colour": "pale",
+  "crosses": [
+    {
+      "colour_1": "ivory",
+      "colour_2": "ivory",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "silver",
+      "colour_2": "ivory",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "silver",
+      "colour_2": "pale",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "royal",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "pearl",
+      "colour_2": "pearl",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "pearl",
+      "colour_2": "ivory",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "pale",
+      "colour_2": "ivory",
+      "weight": 1.0
+    }
+  ]
+}

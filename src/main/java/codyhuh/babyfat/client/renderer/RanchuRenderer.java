@@ -146,8 +146,21 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 	}
 
 	@Override
+	protected void scale(T pLivingEntity, PoseStack pPoseStack, float pPartialTickTime) {
+		super.scale(pLivingEntity, pPoseStack, pPartialTickTime);
+		if(pLivingEntity.isBaby()) {
+			pPoseStack.scale(0.475f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.07f * Mth.PI)*0.020f
+					, 0.475f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.05f * Mth.PI+ 0.6f)*0.020f,
+					0.475f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.08f * Mth.PI+1.5f)*0.020f);
+		}
+	}
+
+	@Override
 	public ResourceLocation getTextureLocation(T entity) {
 		int ego = entity.getVariant();
+		if(ego == -1) {
+			ego = 0;
+		}
 		int base = (2*2*2-1 & ego);
 		int pat1 = (2*2*2*2*2*2-1 & ego >> 3);
 		int pat2 = (2*2*2*2*2*2-1 & ego >> 3+6);

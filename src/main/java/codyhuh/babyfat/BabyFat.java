@@ -20,6 +20,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +31,7 @@ import java.util.List;
 public class BabyFat {
 	public static final String MOD_ID = "babyfat";
 	public static final List<Runnable> CALLBACKS = new ArrayList<>();
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	public BabyFat() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();

@@ -1,0 +1,76 @@
+{
+  "colour": "rust",
+  "crosses": [
+    {
+      "colour_1": "wild",
+      "colour_2": "wild",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "syrup",
+      "colour_2": "pyrite",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "ginger",
+      "colour_2": "apricot",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "ginger",
+      "colour_2": "syrup",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "chocolate",
+      "colour_2": "ginger",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "copper",
+      "colour_2": "apricot",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "copper",
+      "colour_2": "syrup",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "apricot",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "copper",
+      "colour_2": "chocolate",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "gold",
+      "colour_2": "redwood",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "copper",
+      "colour_2": "copper",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "apricot",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "syrup",
+      "weight": 1.0
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "ruby",
+      "weight": 1.0
+    }
+
+  ]
+}

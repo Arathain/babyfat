@@ -50,7 +50,7 @@ public class RanchuSexResolver {
         RanchuColour collapse(RanchuColour a, RanchuColour b, RandomSource random, Consumer<RanchuColour> mutationCallback);
     }
 
-    public class WeightedSuperposition implements SexLookupSuperposition {
+    public static class WeightedSuperposition implements SexLookupSuperposition {
         private final Map<RanchuColour, Float> sexChances = new HashMap<>();
 
         public void addEntry(RanchuColour col, float f) {
@@ -83,7 +83,7 @@ public class RanchuSexResolver {
         sexResults.clear();
     }
 
-    private Map<Integer, SexLookupSuperposition> sexResults = new HashMap<>();
+    private final Map<Integer, SexLookupSuperposition> sexResults = new HashMap<>();
 
     public SexLookupSuperposition lookupSuperposition(RanchuColour a, RanchuColour b) {
         int lookup = a.ordinal() + (b.ordinal() << 5);
