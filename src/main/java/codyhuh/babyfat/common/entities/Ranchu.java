@@ -102,7 +102,7 @@ public class Ranchu extends Animal implements Bucketable {
 		int c2 = wCIndex;
 
 		i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
-		this.setTail(random.nextInt(6));
+		this.setTail(random.nextInt(3));
 		this.setVariant(i);
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 	}
@@ -136,6 +136,7 @@ public class Ranchu extends Animal implements Bucketable {
 	public void loadFromBucketTag(CompoundTag compound) {
 		Bucketable.loadDefaultDataFromBucketTag(this, compound);
 		this.setVariant(compound.getInt("Variant"));
+		setTail(compound.getByte("Tail"));
 		this.setAge(compound.getInt("Age"));
 	}
 
@@ -144,6 +145,7 @@ public class Ranchu extends Animal implements Bucketable {
 		CompoundTag compoundnbt = bucket.getOrCreateTag();
 		Bucketable.saveDefaultDataToBucketTag(this, bucket);
 		compoundnbt.putInt("Variant", this.getVariant());
+		compoundnbt.putByte("Tail", (byte)getTail());
 		compoundnbt.putInt("Age", this.getAge());
 	}
 
@@ -196,7 +198,7 @@ public class Ranchu extends Animal implements Bucketable {
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
 		setVariant(compound.getInt("Variant"));
-		setTail(compound.getInt("Tail"));
+		setTail(compound.getByte("Tail"));
 		this.setFromBucket(compound.getBoolean("FromBucket"));
 		this.setFromBucket(compound.getBoolean("Bucketed"));
 	}
@@ -263,12 +265,12 @@ public class Ranchu extends Animal implements Bucketable {
 
 		long time = level().getLevelData().getDayTime();
 
-		if (canFindLettuce() && time % 24000 > 23000 && !this.isBaby()) {
-			setInLoveTime(40);
-		}
-		if (canFindLettuce() && time % 13000 > 12500) {
-			setInLoveTime(40);
-		}
+//		if (canFindLettuce() && time % 24000 > 23000 && !this.isBaby()) {
+//			setInLoveTime(40);
+//		}
+//		if (canFindLettuce() && time % 13000 > 12500) {
+//			setInLoveTime(40);
+//		}
 		super.aiStep();
 	}
 
@@ -331,7 +333,7 @@ public class Ranchu extends Animal implements Bucketable {
 			}
 			BabyFat.LOGGER.info("Child conceived: \n" + "base: " + base + "\npattern 1: " + pat1 + "\npattern 2: " + pat2 + "\nbasecolour: " + baseColour + getColourName(baseColour)
 			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
-			child.setTail(random.nextInt(6));
+			child.setTail(random.nextBoolean() ? this.getTail() : ((Ranchu) ranchuB).getTail());
 			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
 		}
 		child.setPersistenceRequired();
@@ -375,13 +377,25 @@ public class Ranchu extends Animal implements Bucketable {
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6)];
 	}
 
+	public static RanchuSexResolver.RanchuColour getBaseColour(int ego) {
+		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6)];
+	}
+
 	public RanchuSexResolver.RanchuColour getFirstPatternColour() {
 		int ego = this.getVariant();
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5)];
 	}
 
+	public RanchuSexResolver.RanchuColour getFirstPatternColour(int ego) {
+		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5)];
+	}
+
 	public RanchuSexResolver.RanchuColour getSecondPatternColour() {
 		int ego = this.getVariant();
+		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5 + 5)];
+	}
+
+	public static RanchuSexResolver.RanchuColour getSecondPatternColour(int ego) {
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6 + 5 + 5)];
 	}
 
