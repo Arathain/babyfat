@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_savanna",
+  "biomes": "#babyfat:has_water_lettuce",
   "features": "babyfat:water_lettuce",
   "step": "vegetal_decoration"
 }

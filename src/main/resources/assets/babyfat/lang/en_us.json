@@ -2,6 +2,16 @@
   "item.babyfat.ranchu_spawn_egg": "Ranchu Spawn Egg",
   "item.babyfat.ranchu_bucket": "Bucket of Ranchu",
 
+  "item.babyfat.ranchu": "Ranchu",
+  "item.babyfat.wildcard": "Wildcard",
+  "item.babyfat.azure_trophy": "Azure Trophy",
+  "item.babyfat.opal_trophy": "Opal Trophy",
+  "item.babyfat.onyx_trophy": "Onyx Trophy",
+  "item.babyfat.copper_trophy": "Copper Trophy",
+  "item.babyfat.iron_trophy": "Iron Trophy",
+  "item.babyfat.gold_trophy": "Gold Trophy",
+  "item.babyfat.diamond_trophy": "Diamond Trophy",
+
   "entity.babyfat.ranchu": "Ranchu",
   "block.babyfat.water_lettuce": "Water Lettuce",
 
