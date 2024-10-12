@@ -6,6 +6,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
@@ -20,13 +21,15 @@ public class BFItems {
 
 	public static final RegistryObject<Item> WATER_LETTUCE = ITEMS.register("water_lettuce", () -> new PlaceOnWaterBlockItem(BFBlocks.WATER_LETTUCE.get(), new Item.Properties()));
 
-	public static final RegistryObject<Item> COPPER_TROPHY = ITEMS.register("copper_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> IRON_TROPHY = ITEMS.register("iron_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> GOLD_TROPHY = ITEMS.register("gold_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> DIAMOND_TROPHY = ITEMS.register("diamond_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> ONYX_TROPHY = ITEMS.register("onyx_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> OPAL_TROPHY = ITEMS.register("opal_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> AZURE_TROPHY = ITEMS.register("azure_trophy", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> WILDCARD = ITEMS.register("wildcard", () -> new Item(new Item.Properties().stacksTo(1)));
-	public static final RegistryObject<Item> RANCHU = ITEMS.register("ranchu", () -> new Item(new Item.Properties().stacksTo(1)));
+	private static final Item.Properties ADV = new Item.Properties().stacksTo(1).rarity(Rarity.EPIC);
+
+	public static final RegistryObject<Item> COPPER_TROPHY = ITEMS.register("copper_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> IRON_TROPHY = ITEMS.register("iron_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> GOLD_TROPHY = ITEMS.register("gold_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> DIAMOND_TROPHY = ITEMS.register("diamond_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> ONYX_TROPHY = ITEMS.register("onyx_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> OPAL_TROPHY = ITEMS.register("opal_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> AZURE_TROPHY = ITEMS.register("azure_trophy", () -> new Item(ADV));
+	public static final RegistryObject<Item> WILDCARD = ITEMS.register("wildcard", () -> new Item(ADV));
+	public static final RegistryObject<Item> RANCHU = ITEMS.register("ranchu", () -> new Item(ADV));
 }
