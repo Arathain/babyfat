@@ -15,9 +15,9 @@ public class BFTabs {
                     .title(Component.translatable("itemGroup." + BabyFat.MOD_ID))
                     .icon(BFItems.RANCHU_BUCKET.get()::getDefaultInstance)
                     .displayItems((displayParams, output) -> {
-                        for (var item : BFItems.ITEMS.getEntries()) {
-                            output.accept(item.get());
-                        }
+                        output.accept(BFItems.RANCHU_BUCKET.get());
+                        output.accept(BFItems.RANCHU_SPAWN_EGG.get());
+                        output.accept(BFItems.WATER_LETTUCE.get());
                     })
                     .build()
     );

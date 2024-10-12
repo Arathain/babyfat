@@ -43,8 +43,8 @@ public class RanchuBucketItem extends MobBucketItem {
 	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
 		super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
 		if (pStack.hasTag()) {
-			Component domesticated = Component.translatable("tooltip.babyfat.domesticated").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC);
-			pTooltipComponents.add(domesticated);
+			//Component domesticated = Component.translatable("tooltip.babyfat.domesticated").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC);
+			//pTooltipComponents.add(domesticated);
 			int ego = pStack.getOrCreateTag().getInt("Variant");
 			int tail = pStack.getOrCreateTag().getByte("Tail");
 			if(ego != -1) {
