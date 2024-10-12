@@ -148,10 +148,12 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 	@Override
 	protected void scale(T pLivingEntity, PoseStack pPoseStack, float pPartialTickTime) {
 		super.scale(pLivingEntity, pPoseStack, pPartialTickTime);
+		float size = pLivingEntity.getSize();
+		pPoseStack.scale(size, size, size);
 		if(pLivingEntity.isBaby()) {
-			pPoseStack.scale(0.475f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.07f * Mth.PI)*0.020f
-					, 0.475f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.05f * Mth.PI+ 0.6f)*0.020f,
-					0.475f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.08f * Mth.PI+1.5f)*0.020f);
+			pPoseStack.scale(0.5f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.07f * Mth.PI)*0.020f
+					, 0.5f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.05f * Mth.PI+ 0.6f)*0.020f,
+					0.5f+Mth.sin((pLivingEntity.getId() + pLivingEntity.level().getDayTime() + pPartialTickTime) * 0.08f * Mth.PI+1.5f)*0.020f);
 		}
 	}
 

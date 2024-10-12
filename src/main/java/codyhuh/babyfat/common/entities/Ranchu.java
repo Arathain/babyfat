@@ -48,22 +48,41 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.common.Tags;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class Ranchu extends Animal implements Bucketable {
+	private static final float MAX_SIZE = 2f;
+	private static final float MIN_SIZE = 0.8f;
 	public static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Float> SIZE_A = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.FLOAT);
+	public static final EntityDataAccessor<Float> SIZE_B = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.FLOAT);
 	public static final EntityDataAccessor<Byte> TAIL = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.BYTE);
 	private static final EntityDataAccessor<Boolean> FROM_BUCKET = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.BOOLEAN);
 	public static final Ingredient FOOD_ITEMS = Ingredient.of(BFItems.WATER_LETTUCE.get());
+	private float size = -1f;
 
 	public Ranchu(EntityType<? extends Animal> type, Level worldIn) {
 		super(type, worldIn);
 		this.lookControl = new SmoothSwimmingLookControl(this, 10);
 		this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.02F, 0.1F, true);
 		this.setPathfindingMalus(BlockPathTypes.WATER, 0.0F);
+	}
+	public float getSize() {
+		if(size == -1f) {
+			float s = Math.min(getSizeA(), getSizeB());
+			size = s;
+			return s;
+		} else {
+			return size;
+		}
+	}
+	protected void reloadSize() {
+		size = -1;
 	}
 
 	@Override
@@ -104,6 +123,11 @@ public class Ranchu extends Animal implements Bucketable {
 		i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
 		this.setTail(random.nextInt(3));
 		this.setVariant(i);
+		float gA = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
+		float gB = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
+		this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
+		this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
+		reloadSize();
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 	}
 
@@ -116,6 +140,8 @@ public class Ranchu extends Animal implements Bucketable {
 		super.defineSynchedData();
 		this.entityData.define(TAIL, (byte)0);
 		this.entityData.define(VARIANT, -1);
+		this.entityData.define(SIZE_A, 1f);
+		this.entityData.define(SIZE_B, 1f);
 		this.entityData.define(FROM_BUCKET, false);
 	}
 
@@ -175,6 +201,20 @@ public class Ranchu extends Animal implements Bucketable {
 		this.entityData.set(TAIL, (byte)variant);
 	}
 
+	public void setSizeA(float s) {
+		this.entityData.set(SIZE_A, s);
+	}
+	public void setSizeB(float s) {
+		this.entityData.set(SIZE_B, s);
+	}
+
+	public float getSizeA() {
+		return this.entityData.get(SIZE_A);
+	}
+	public float getSizeB() {
+		return this.entityData.get(SIZE_B);
+	}
+
 	@Override
 	public MobType getMobType() {
 		return MobType.WATER;
@@ -190,6 +230,10 @@ public class Ranchu extends Animal implements Bucketable {
 		super.addAdditionalSaveData(compound);
 		compound.putInt("Variant", getVariant());
 		compound.putByte("Tail", (byte)getTail());
+
+		compound.putFloat("sizeA", getSizeA());
+		compound.putFloat("sizeB", getSizeB());
+
 		compound.putBoolean("FromBucket", this.isFromBucket());
 		compound.putBoolean("Bucketed", this.fromBucket());
 	}
@@ -199,6 +243,10 @@ public class Ranchu extends Animal implements Bucketable {
 		super.readAdditionalSaveData(compound);
 		setVariant(compound.getInt("Variant"));
 		setTail(compound.getByte("Tail"));
+
+		setSizeA(compound.getFloat("sizeA"));
+		setSizeB(compound.getFloat("sizeB"));
+
 		this.setFromBucket(compound.getBoolean("FromBucket"));
 		this.setFromBucket(compound.getBoolean("Bucketed"));
 	}
@@ -315,8 +363,8 @@ public class Ranchu extends Animal implements Bucketable {
 
 	@Nullable
 	@Override
-	public Ranchu getBreedOffspring(ServerLevel p_241840_1_, AgeableMob ranchuB) {
-			Ranchu child = BFEntities.RANCHU.get().create(p_241840_1_);
+	public Ranchu getBreedOffspring(ServerLevel w, AgeableMob ranchuB) {
+			Ranchu child = BFEntities.RANCHU.get().create(w);
 			RandomSource rand = this.getRandom();
 		if (ranchuB instanceof Ranchu r) {
 			// Feral + Feral
@@ -335,6 +383,15 @@ public class Ranchu extends Animal implements Bucketable {
 			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
 			child.setTail(random.nextBoolean() ? this.getTail() : ((Ranchu) ranchuB).getTail());
 			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
+			if(w.getBiome(this.blockPosition()).is(Tags.Biomes.IS_MUSHROOM) && random.nextFloat() > 0.1f) {
+				child.setSizeA(Math.max(this.getSizeA(), ((Ranchu) ranchuB).getSizeA()));
+				child.setSizeB(Math.max(this.getSizeB(), ((Ranchu) ranchuB).getSizeB()));
+				child.reloadSize();
+			} else {
+				child.setSizeA(random.nextBoolean() ? this.getSizeA() : ((Ranchu) ranchuB).getSizeA());
+				child.setSizeB(random.nextBoolean() ? this.getSizeB() : ((Ranchu) ranchuB).getSizeB());
+				child.reloadSize();
+			}
 		}
 		child.setPersistenceRequired();
 
