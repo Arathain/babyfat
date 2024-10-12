@@ -161,6 +161,8 @@ public class Ranchu extends Animal implements Bucketable {
 	@Override
 	public void loadFromBucketTag(CompoundTag compound) {
 		Bucketable.loadDefaultDataFromBucketTag(this, compound);
+		setSizeA(compound.getFloat("sizeA"));
+		setSizeB(compound.getFloat("sizeB"));
 		this.setVariant(compound.getInt("Variant"));
 		setTail(compound.getByte("Tail"));
 		this.setAge(compound.getInt("Age"));
@@ -170,6 +172,8 @@ public class Ranchu extends Animal implements Bucketable {
 	public void saveToBucketTag(ItemStack bucket) {
 		CompoundTag compoundnbt = bucket.getOrCreateTag();
 		Bucketable.saveDefaultDataToBucketTag(this, bucket);
+		compoundnbt.putFloat("sizeA", getSizeA());
+		compoundnbt.putFloat("sizeB", getSizeB());
 		compoundnbt.putInt("Variant", this.getVariant());
 		compoundnbt.putByte("Tail", (byte)getTail());
 		compoundnbt.putInt("Age", this.getAge());
