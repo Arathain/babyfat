@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "babyfat:item/iron_trophy"
+    "layer0": "babyfat:item/big_ol_bub"
   }
 }

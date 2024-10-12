@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "babyfat:copper_trophy",
+    "babyfat:iron_trophy",
+    "babyfat:gold_trophy",
+    "babyfat:diamond_trophy",
+    "babyfat:onyx_trophy",
+    "babyfat:opal_trophy",
+    "babyfat:azure_trophy",
+    "babyfat:wildcard",
+    "babyfat:ranchu",
+    "babyfat:big_ol_bub"
+  ]
+}

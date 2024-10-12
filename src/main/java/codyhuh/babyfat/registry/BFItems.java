@@ -2,6 +2,10 @@ package codyhuh.babyfat.registry;
 
 import codyhuh.babyfat.BabyFat;
 import codyhuh.babyfat.common.items.RanchuBucketItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.Tag;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -23,6 +27,8 @@ public class BFItems {
 
 	private static final Item.Properties ADV = new Item.Properties().stacksTo(1).rarity(Rarity.EPIC);
 
+	public static final TagKey<Item> HIDDEN = TagKey.create(Registries.ITEM, BabyFat.id("hidden"));
+
 	public static final RegistryObject<Item> COPPER_TROPHY = ITEMS.register("copper_trophy", () -> new Item(ADV));
 	public static final RegistryObject<Item> IRON_TROPHY = ITEMS.register("iron_trophy", () -> new Item(ADV));
 	public static final RegistryObject<Item> GOLD_TROPHY = ITEMS.register("gold_trophy", () -> new Item(ADV));
@@ -32,4 +38,5 @@ public class BFItems {
 	public static final RegistryObject<Item> AZURE_TROPHY = ITEMS.register("azure_trophy", () -> new Item(ADV));
 	public static final RegistryObject<Item> WILDCARD = ITEMS.register("wildcard", () -> new Item(ADV));
 	public static final RegistryObject<Item> RANCHU = ITEMS.register("ranchu", () -> new Item(ADV));
+	public static final RegistryObject<Item> BUB = ITEMS.register("big_ol_bub", () -> new Item(ADV));
 }
