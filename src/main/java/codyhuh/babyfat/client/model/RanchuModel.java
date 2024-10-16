@@ -147,7 +147,7 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 		for(ModelPart p : tgtl) {
 			p.visible = true;
 		}
-		float time = entityIn.level().getDayTime() % (20f * Mth.TWO_PI * 4f);
+		float time = ageInTicks % (20f * Mth.TWO_PI * 4f);
 		time /= 20f;
 		if (entityIn.isInWater()) {
 			this.body.xRot = headPitch * ((float) Math.PI / 180F);
@@ -172,23 +172,23 @@ public class RanchuModel<T extends Ranchu> extends AgeableListModel<T> {
 
 	private ModelPart[] chooseTargetRight(int var) {
 		return switch(var) {
-			case 0 -> new ModelPart[]{tailbuttonright};
+			case 0 ->  new ModelPart[]{tailbuttonright};
 			default -> new ModelPart[]{tailfanright};
-			case 2 -> new ModelPart[]{tailphoenixright};
-			case 3 -> new ModelPart[]{tailazureright};
-			case 4 -> new ModelPart[]{tailonyxright};
-			case 5 -> new ModelPart[]{tailopalright, tailopalsideright};
+			case 2 ->  new ModelPart[]{tailphoenixright};
+			case 3 ->  new ModelPart[]{tailazureright};
+			case 4 ->  new ModelPart[]{tailonyxright};
+			case 5 ->  new ModelPart[]{tailopalright, tailopalsideright};
 		};
 	}
 
 	private ModelPart[] chooseTargetLeft(int var) {
 		return switch(var) {
-			case 0 -> new ModelPart[]{tailbuttonleft};
+			case 0 ->  new ModelPart[]{tailbuttonleft};
 			default -> new ModelPart[]{tailfanleft};
-			case 2 -> new ModelPart[]{tailphoenixleft};
-			case 3 -> new ModelPart[]{tailazureleft};
-			case 4 -> new ModelPart[]{tailonyxleft};
-			case 5 -> new ModelPart[]{tailopalleft, tailopalsideleft};
+			case 2 ->  new ModelPart[]{tailphoenixleft};
+			case 3 ->  new ModelPart[]{tailazureleft};
+			case 4 ->  new ModelPart[]{tailonyxleft};
+			case 5 ->  new ModelPart[]{tailopalleft, tailopalsideleft};
 		};
 	}
 
