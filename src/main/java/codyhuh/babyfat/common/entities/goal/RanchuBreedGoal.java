@@ -4,6 +4,7 @@ import codyhuh.babyfat.common.entities.Ranchu;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.ai.goal.Goal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
@@ -11,81 +12,92 @@ import java.util.EnumSet;
 import java.util.List;
 
 public class RanchuBreedGoal extends Goal {
-	private static final TargetingConditions PARTNER_TARGETING = TargetingConditions.forNonCombat().range(8.0D).ignoreLineOfSight();
-	protected final Ranchu animal;
-	private final Class<? extends Ranchu> mateClass;
-	protected final Level world;
-	protected Ranchu targetMate;
-	private int spawnBabyDelay;
-	private final double moveSpeed;
+    private static final TargetingConditions PARTNER_TARGETING = TargetingConditions.forNonCombat().range(8.0D).ignoreLineOfSight();
+    protected final Ranchu animal;
+    private final Class<? extends Ranchu> partnerClass;
+    protected final Level level;
+    @Nullable
+    protected Ranchu partner;
+    private int loveTime;
+    private final double speedModifier;
 
-	public RanchuBreedGoal(Ranchu animal, double speedIn) {
-		this(animal, speedIn, animal.getClass());
-	}
+    public RanchuBreedGoal(Ranchu pAnimal, double pSpeedModifier) {
+        this(pAnimal, pSpeedModifier, pAnimal.getClass());
+    }
 
-	public RanchuBreedGoal(Ranchu animal, double moveSpeed, Class<? extends Ranchu> mateClass) {
-		this.animal = animal;
-		this.world = animal.level();
-		this.mateClass = mateClass;
-		this.moveSpeed = moveSpeed;
-		this.setFlags(EnumSet.of(Goal.Flag.MOVE, Goal.Flag.LOOK));
-	}
+    public RanchuBreedGoal(Ranchu pAnimal, double pSpeedModifier, Class<? extends Ranchu> pPartnerClass) {
+        this.animal = pAnimal;
+        this.level = pAnimal.level();
+        this.partnerClass = pPartnerClass;
+        this.speedModifier = pSpeedModifier;
+        this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
+    }
 
-	public boolean canUse() {
-		List<? extends Ranchu> list = animal.level().getNearbyEntities(this.mateClass, PARTNER_TARGETING, this.animal, this.animal.getBoundingBox().inflate(8.0D));
+    /**
+     * Returns whether execution should begin. You can also read and cache any state necessary for execution in this
+     * method as well.
+     */
+    public boolean canUse() {
+        if (!this.animal.isInLove()) {
+            return false;
+        } else {
+            this.partner = this.getFreePartner();
+            return this.partner != null;
+        }
+    }
 
-		assert !this.animal.isBaby();
+    /**
+     * Returns whether an in-progress EntityAIBase should continue executing
+     */
+    public boolean canContinueToUse() {
+        return this.partner.isAlive() && this.partner.isInLove() && this.loveTime < 60;
+    }
 
-		long time = this.animal.level().getLevelData().getDayTime();
+    /**
+     * Reset the task's internal state. Called when this task is interrupted by another one
+     */
+    public void stop() {
+        this.partner = null;
+        this.loveTime = 0;
+    }
 
-		if (!this.animal.isInLove() || this.animal.isBaby() || time % 24000 <= 23000 || !this.animal.fromBucket()) {
-			return false;
-		} else if (list.size() < 6) {
-			this.targetMate = this.getNearbyMate();
-			return this.targetMate != null;
-		} else {
-			return false;
-		}
-	}
+    /**
+     * Keep ticking a continuous task that has already been started
+     */
+    public void tick() {
+        this.animal.getLookControl().setLookAt(this.partner, 10.0F, (float)this.animal.getMaxHeadXRot());
+        this.animal.getNavigation().moveTo(this.partner, this.speedModifier);
+        ++this.loveTime;
+        if (this.loveTime >= this.adjustedTickDelay(60) && this.animal.distanceToSqr(this.partner) < 9.0D) {
+            this.breed();
+        }
 
-	public boolean canContinueToUse() {
-		return this.targetMate.isAlive() && this.targetMate.isInLove() && this.spawnBabyDelay < 60;
-	}
+    }
 
-	public void stop() {
-		this.targetMate = null;
-		this.spawnBabyDelay = 0;
-	}
+    /**
+     * Loops through nearby animals and finds another animal of the same type that can be mated with. Returns the first
+     * valid mate found.
+     */
+    @Nullable
+    private Ranchu getFreePartner() {
+        List<? extends Ranchu> list = this.level.getNearbyEntities(this.partnerClass, PARTNER_TARGETING, this.animal, this.animal.getBoundingBox().inflate(8.0D));
+        double d0 = Double.MAX_VALUE;
+        Ranchu animal = null;
 
-	public void tick() {
-		this.animal.getLookControl().setLookAt(this.targetMate, 10.0F, (float) this.animal.getMaxHeadXRot());
-		this.animal.getNavigation().moveTo(this.targetMate, this.moveSpeed);
-		++this.spawnBabyDelay;
-		if (this.spawnBabyDelay >= 10 && this.animal.distanceToSqr(this.targetMate) < 9.0D) {
-			this.spawnBaby();
-		}
-		if (this.animal.tickCount % 20 == 0) {
-			this.animal.level().broadcastEntityEvent(this.animal, (byte) 18);
-		}
-	}
+        for(Ranchu animal1 : list) {
+            if (this.animal.canMate(animal1) && this.animal.distanceToSqr(animal1) < d0) {
+                animal = animal1;
+                d0 = this.animal.distanceToSqr(animal1);
+            }
+        }
 
-	@Nullable
-	private Ranchu getNearbyMate() {
-		List<? extends Ranchu> list = this.world.getNearbyEntities(this.mateClass, PARTNER_TARGETING, this.animal, this.animal.getBoundingBox().inflate(20.0D));
-		double d0 = Double.MAX_VALUE;
-		Ranchu animalentity = null;
+        return animal;
+    }
 
-		for (Ranchu ranchu : list) {
-			if (this.animal.canMate(ranchu) && this.animal.distanceToSqr(ranchu) < d0 && !ranchu.isBaby()) {
-				animalentity = ranchu;
-				d0 = this.animal.distanceToSqr(ranchu);
-			}
-		}
-
-		return animalentity;
-	}
-
-	protected void spawnBaby() {
-		this.animal.spawnChildFromBreeding((ServerLevel) this.world, this.targetMate);
-	}
+    /**
+     * Spawns a baby animal of the same type.
+     */
+    protected void breed() {
+        this.animal.spawnChildFromBreeding((ServerLevel)this.level, this.partner);
+    }
 }

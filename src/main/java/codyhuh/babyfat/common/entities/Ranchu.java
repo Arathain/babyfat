@@ -1,6 +1,7 @@
 package codyhuh.babyfat.common.entities;
 
 import codyhuh.babyfat.BabyFat;
+import codyhuh.babyfat.common.entities.goal.OldRanchuBreedGoal;
 import codyhuh.babyfat.common.entities.goal.RanchuBreedGoal;
 import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
@@ -13,13 +14,11 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
@@ -30,7 +29,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
-import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
@@ -53,9 +51,8 @@ import net.minecraftforge.common.Tags;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
-public class Ranchu extends Animal implements Bucketable {
+public class Ranchu extends AbstractRanchu implements Bucketable {
 	private static final float MAX_SIZE = 2f;
 	private static final float MIN_SIZE = 0.8f;
 	public static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.INT);
@@ -66,7 +63,7 @@ public class Ranchu extends Animal implements Bucketable {
 	public static final Ingredient FOOD_ITEMS = Ingredient.of(BFItems.WATER_LETTUCE.get());
 	private float size = -1f;
 
-	public Ranchu(EntityType<? extends Animal> type, Level worldIn) {
+	public Ranchu(EntityType<? extends AbstractRanchu> type, Level worldIn) {
 		super(type, worldIn);
 		this.lookControl = new SmoothSwimmingLookControl(this, 10);
 		this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.02F, 0.1F, true);
@@ -89,7 +86,7 @@ public class Ranchu extends Animal implements Bucketable {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new PanicGoal(this, 1.25D));
-		this.goalSelector.addGoal(1, new BreedGoal(this, 1.5D));
+		this.goalSelector.addGoal(1, new RanchuBreedGoal(this, 1.5D));
 		//this.goalSelector.addGoal(1, new RanchuBreedGoal(this, 1.25D));
 		this.goalSelector.addGoal(2, new TemptGoal(this, 1.25D, FOOD_ITEMS, false));
 		this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.5, 1));
@@ -367,7 +364,7 @@ public class Ranchu extends Animal implements Bucketable {
 
 	@Nullable
 	@Override
-	public Ranchu getBreedOffspring(ServerLevel w, AgeableMob ranchuB) {
+	public Ranchu getBreedOffspring(ServerLevel w, AbstractRanchu ranchuB) {
 			Ranchu child = BFEntities.RANCHU.get().create(w);
 			RandomSource rand = this.getRandom();
 		if (ranchuB instanceof Ranchu r) {
