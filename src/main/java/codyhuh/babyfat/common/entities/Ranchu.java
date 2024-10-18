@@ -105,26 +105,42 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
 
-		if (getVariant() != -1) {
-			return spawnDataIn;
-		}
-		int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
-		int i;
-		int base = 4;
-		int pat1 = random.nextInt(64);
-		int pat2 = random.nextInt(64);
-		int baseColour = wCIndex;
-		int c1 = wCIndex;
-		int c2 = wCIndex;
+		if (reason == MobSpawnType.BUCKET && dataTag != null && dataTag.contains("Variant", 3)) {
 
-		i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
-		this.setTail(random.nextInt(3));
-		this.setVariant(i);
-		float gA = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
-		float gB = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
-		this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
-		this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
-		reloadSize();
+			this.setSizeA(dataTag.getFloat("sizeA"));
+			this.setSizeB(dataTag.getFloat("sizeB"));
+			this.setVariant(dataTag.getInt("Variant"));
+			this.setTail(dataTag.getByte("Tail"));
+
+			if (dataTag.contains("Age")) {
+				this.setAge(dataTag.getInt("Age"));
+			}
+
+		}else {
+
+			if (getVariant() != -1) {
+				return spawnDataIn;
+			}
+			int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
+			int i;
+			int base = 4;
+			int pat1 = random.nextInt(64);
+			int pat2 = random.nextInt(64);
+			int baseColour = wCIndex;
+			int c1 = wCIndex;
+			int c2 = wCIndex;
+
+			i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
+			this.setTail(random.nextInt(3));
+			this.setVariant(i);
+			float gA = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
+			float gB = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
+			this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
+			this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
+			reloadSize();
+
+		}
+
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 	}
 
