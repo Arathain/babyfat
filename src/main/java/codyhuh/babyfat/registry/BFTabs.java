@@ -18,6 +18,7 @@ public class BFTabs {
                         output.accept(BFItems.RANCHU_BUCKET.get());
                         output.accept(BFItems.RANCHU_SPAWN_EGG.get());
                         output.accept(BFItems.WATER_LETTUCE.get());
+                        output.accept(BFItems.CREATIVE_LETTUCE.get());
                     })
                     .build()
     );

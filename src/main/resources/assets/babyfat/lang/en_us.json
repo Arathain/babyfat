@@ -18,5 +18,8 @@
 
   "tooltip.babyfat.domesticated": "Domesticated",
 
-  "itemGroup.babyfat": "Baby Fat"
+  "itemGroup.babyfat": "Baby Fat",
+
+  "item.babyfat.creative_lettuce": "Creative Lettuce",
+  "tooltip.babyfat.creativelettuce" : "When fed to a ranchu, resets breeding cooldown or fully ages the ranchu"
 }

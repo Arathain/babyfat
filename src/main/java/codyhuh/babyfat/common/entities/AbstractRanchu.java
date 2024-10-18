@@ -1,6 +1,7 @@
 package codyhuh.babyfat.common.entities;
 
 import codyhuh.babyfat.BabyFat;
+import codyhuh.babyfat.registry.BFItems;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -295,20 +296,22 @@ public abstract class AbstractRanchu extends WaterAnimal {
         AbstractRanchu ageableMob3 = null;
         AbstractRanchu ageableMob4 = null;
 
+        int chance = this.random.nextInt(100);
+
         final AbstractRanchu.BabyFishSpawnEvent event = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageablemob);
         ageablemob = event.getChild();
 
-        if (this.random.nextBoolean() || this.random.nextBoolean()){
+        if (chance>15){
             ageableMob2 = this.getBreedOffspring(pLevel, pMate);
             final AbstractRanchu.BabyFishSpawnEvent event2 = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageableMob2);
             ageableMob2 = event2.getChild();
 
-            if (this.random.nextBoolean()){
+            if (chance>55){
                 ageableMob3 = this.getBreedOffspring(pLevel, pMate);
                 final AbstractRanchu.BabyFishSpawnEvent event3 = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageableMob3);
                 ageableMob3 = event3.getChild();
 
-                if (this.random.nextBoolean()){
+                if (chance>95){
 
                     ageableMob4 = this.getBreedOffspring(pLevel, pMate);
                     final AbstractRanchu.BabyFishSpawnEvent event4 = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageableMob4);
@@ -579,6 +582,20 @@ public abstract class AbstractRanchu extends WaterAnimal {
                 double d1 = this.random.nextGaussian() * 0.02D;
                 double d2 = this.random.nextGaussian() * 0.02D;
                 this.level().addParticle(ParticleTypes.ANGRY_VILLAGER, this.getRandomX(1.0D), this.getRandomY() + 0.5D, this.getRandomZ(1.0D), d0, d1, d2);
+            }
+
+            return InteractionResult.SUCCESS;
+        }
+
+        if (itemstack.is(BFItems.CREATIVE_LETTUCE.get())){
+            this.setAge(0);
+            this.inLove = 0;
+
+            for(int j = 0; j < 7; ++j) {
+                double d0 = this.random.nextGaussian() * 0.02D;
+                double d1 = this.random.nextGaussian() * 0.02D;
+                double d2 = this.random.nextGaussian() * 0.02D;
+                this.level().addParticle(ParticleTypes.GLOW, this.getRandomX(1.0D), this.getRandomY() + 0.5D, this.getRandomZ(1.0D), d0, d1, d2);
             }
 
             return InteractionResult.SUCCESS;

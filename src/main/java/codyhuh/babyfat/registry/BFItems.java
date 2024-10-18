@@ -1,6 +1,7 @@
 package codyhuh.babyfat.registry;
 
 import codyhuh.babyfat.BabyFat;
+import codyhuh.babyfat.common.items.CreativeLettuceItem;
 import codyhuh.babyfat.common.items.RanchuBucketItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.Tag;
@@ -24,6 +25,9 @@ public class BFItems {
 	public static final RegistryObject<Item> RANCHU_SPAWN_EGG = ITEMS.register("ranchu_spawn_egg", () -> new ForgeSpawnEggItem(BFEntities.RANCHU, 0x736036, 0xd1a965, new Item.Properties()));
 
 	public static final RegistryObject<Item> WATER_LETTUCE = ITEMS.register("water_lettuce", () -> new PlaceOnWaterBlockItem(BFBlocks.WATER_LETTUCE.get(), new Item.Properties()));
+
+	public static final RegistryObject<Item> CREATIVE_LETTUCE = ITEMS.register("creative_lettuce", ()->
+			new CreativeLettuceItem(new Item.Properties().rarity(Rarity.EPIC)));
 
 	private static final Item.Properties ADV = new Item.Properties().stacksTo(1).rarity(Rarity.EPIC);
 
