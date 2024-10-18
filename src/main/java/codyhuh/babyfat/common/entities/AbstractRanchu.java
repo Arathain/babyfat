@@ -42,6 +42,9 @@ public abstract class AbstractRanchu extends WaterAnimal {
 
     //ageable mob
     private static final EntityDataAccessor<Boolean> DATA_BABY_ID = SynchedEntityData.defineId(AbstractRanchu.class, EntityDataSerializers.BOOLEAN);
+
+    private static final EntityDataAccessor<Boolean> CAN_GROW_UP = SynchedEntityData.defineId(AbstractRanchu.class, EntityDataSerializers.BOOLEAN);
+
     public static final int BABY_START_AGE = -24000;
     private static final int FORCED_AGE_PARTICLE_TICKS = 40;
     protected int age;
@@ -265,26 +268,97 @@ public abstract class AbstractRanchu extends WaterAnimal {
         }
     }
 
+//    public void spawnChildFromBreeding(ServerLevel pLevel, AbstractRanchu pMate) {
+//        AbstractRanchu ageablemob = this.getBreedOffspring(pLevel, pMate);
+//        BabyFishSpawnEvent event = new BabyFishSpawnEvent(this, pMate, ageablemob);
+//        boolean cancelled = MinecraftForge.EVENT_BUS.post(event);
+//        ageablemob = event.getChild();
+//        if (cancelled) {
+//            this.setAge(6000);
+//            pMate.setAge(6000);
+//            this.resetLove();
+//            pMate.resetLove();
+//        } else {
+//            if (ageablemob != null) {
+//                ageablemob.setBaby(true);
+//                ageablemob.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+//                this.finalizeSpawnChildFromBreeding(pLevel, pMate, ageablemob);
+//                pLevel.addFreshEntityWithPassengers(ageablemob);
+//            }
+//
+//        }
+//    }
+
     public void spawnChildFromBreeding(ServerLevel pLevel, AbstractRanchu pMate) {
         AbstractRanchu ageablemob = this.getBreedOffspring(pLevel, pMate);
-        BabyFishSpawnEvent event = new BabyFishSpawnEvent(this, pMate, ageablemob);
-        boolean cancelled = MinecraftForge.EVENT_BUS.post(event);
+        AbstractRanchu ageableMob2 = null;
+        AbstractRanchu ageableMob3 = null;
+        AbstractRanchu ageableMob4 = null;
+
+        final AbstractRanchu.BabyFishSpawnEvent event = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageablemob);
         ageablemob = event.getChild();
+
+        if (this.random.nextBoolean() || this.random.nextBoolean()){
+            ageableMob2 = this.getBreedOffspring(pLevel, pMate);
+            final AbstractRanchu.BabyFishSpawnEvent event2 = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageableMob2);
+            ageableMob2 = event2.getChild();
+
+            if (this.random.nextBoolean()){
+                ageableMob3 = this.getBreedOffspring(pLevel, pMate);
+                final AbstractRanchu.BabyFishSpawnEvent event3 = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageableMob3);
+                ageableMob3 = event3.getChild();
+
+                if (this.random.nextBoolean()){
+
+                    ageableMob4 = this.getBreedOffspring(pLevel, pMate);
+                    final AbstractRanchu.BabyFishSpawnEvent event4 = new AbstractRanchu.BabyFishSpawnEvent(this, pMate, ageableMob4);
+                    ageableMob4 = event4.getChild();
+                }
+            }
+        }
+
+        final boolean cancelled = net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event);
         if (cancelled) {
+            //Reset the "inLove" state for the animals
             this.setAge(6000);
             pMate.setAge(6000);
             this.resetLove();
             pMate.resetLove();
-        } else {
-            if (ageablemob != null) {
-                ageablemob.setBaby(true);
-                ageablemob.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
-                this.finalizeSpawnChildFromBreeding(pLevel, pMate, ageablemob);
-                pLevel.addFreshEntityWithPassengers(ageablemob);
-            }
+            return;
+        }
+        if (ageablemob != null) {
 
+            ageablemob.setAge(-12000);
+            ageablemob.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+            this.finalizeSpawnChildFromBreeding(pLevel, pMate, ageablemob);
+            pLevel.addFreshEntityWithPassengers(ageablemob);
+
+            if (ageableMob2 != null){
+
+                ageableMob2.setAge(-12000);
+                ageableMob2.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+                this.finalizeSpawnChildFromBreeding(pLevel, pMate, ageableMob2);
+                pLevel.addFreshEntityWithPassengers(ageableMob2);
+
+                if (ageableMob3 != null){
+
+                    ageableMob3.setAge(-12000);
+                    ageableMob3.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+                    this.finalizeSpawnChildFromBreeding(pLevel, pMate, ageableMob3);
+                    pLevel.addFreshEntityWithPassengers(ageableMob3);
+
+                    if (ageableMob4 != null){
+
+                        ageableMob4.setAge(-12000);
+                        ageableMob4.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
+                        this.finalizeSpawnChildFromBreeding(pLevel, pMate, ageableMob4);
+                        pLevel.addFreshEntityWithPassengers(ageableMob4);
+                    }
+                }
+            }
         }
     }
+
     @Cancelable
     public class BabyFishSpawnEvent extends net.minecraftforge.eventbus.api.Event
     {
@@ -387,6 +461,7 @@ public abstract class AbstractRanchu extends WaterAnimal {
     protected void defineSynchedData() {
         super.defineSynchedData();
         this.entityData.define(DATA_BABY_ID, false);
+        this.entityData.define(CAN_GROW_UP, true);
     }
 
     @Override
@@ -399,6 +474,8 @@ public abstract class AbstractRanchu extends WaterAnimal {
         if (this.loveCause != null) {
             pCompound.putUUID("LoveCause", this.loveCause);
         }
+
+        pCompound.putBoolean("CanGrowUp", this.getCanGrowUp());
     }
 
     @Override
@@ -407,9 +484,21 @@ public abstract class AbstractRanchu extends WaterAnimal {
         this.setAge(pCompound.getInt("Age"));
         this.forcedAge = pCompound.getInt("ForcedAge");
 
+        this.setCanGrowUp(pCompound.getBoolean("CanGrowUp"));
+
         this.inLove = pCompound.getInt("InLove");
         this.loveCause = pCompound.hasUUID("LoveCause") ? pCompound.getUUID("LoveCause") : null;
     }
+
+
+    public Boolean getCanGrowUp() {
+        return this.entityData.get(CAN_GROW_UP);
+    }
+
+    public void setCanGrowUp(boolean variant) {
+        this.entityData.set(CAN_GROW_UP, variant);
+    }
+
 
     @Override
     protected PathNavigation createNavigation(Level pLevel) {
@@ -431,7 +520,7 @@ public abstract class AbstractRanchu extends WaterAnimal {
             }
         } else if (this.isAlive()) {
             int i = this.getAge();
-            if (i < 0) {
+            if (i < 0 && this.getCanGrowUp()) {
                 ++i;
                 this.setAge(i);
             } else if (i > 0) {
@@ -478,6 +567,21 @@ public abstract class AbstractRanchu extends WaterAnimal {
             if (this.level().isClientSide) {
                 return InteractionResult.CONSUME;
             }
+        }
+
+        if (this.isBaby() && itemstack.is(Items.NETHER_WART) && this.getCanGrowUp()){
+            this.setCanGrowUp(false);
+
+            this.setAge(-12000);
+
+            for(int j = 0; j < 7; ++j) {
+                double d0 = this.random.nextGaussian() * 0.02D;
+                double d1 = this.random.nextGaussian() * 0.02D;
+                double d2 = this.random.nextGaussian() * 0.02D;
+                this.level().addParticle(ParticleTypes.ANGRY_VILLAGER, this.getRandomX(1.0D), this.getRandomY() + 0.5D, this.getRandomZ(1.0D), d0, d1, d2);
+            }
+
+            return InteractionResult.SUCCESS;
         }
 
         return super.interactAt(pPlayer, pVec, pHand);

@@ -116,6 +116,8 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 				this.setAge(dataTag.getInt("Age"));
 			}
 
+			this.setCanGrowUp(dataTag.getBoolean("CanGrowUp"));
+
 		}else {
 
 			if (getVariant() != -1) {
@@ -190,6 +192,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 		compoundnbt.putInt("Variant", this.getVariant());
 		compoundnbt.putByte("Tail", (byte)getTail());
 		compoundnbt.putInt("Age", this.getAge());
+		compoundnbt.putBoolean("CanGrowUp", this.getCanGrowUp());
 	}
 
 	@Override
