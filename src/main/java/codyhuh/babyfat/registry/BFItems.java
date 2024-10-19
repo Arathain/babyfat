@@ -4,12 +4,8 @@ import codyhuh.babyfat.BabyFat;
 import codyhuh.babyfat.common.items.CreativeLettuceItem;
 import codyhuh.babyfat.common.items.RanchuBucketItem;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.nbt.Tag;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.PlaceOnWaterBlockItem;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.level.material.Fluids;
@@ -26,8 +22,7 @@ public class BFItems {
 
 	public static final RegistryObject<Item> WATER_LETTUCE = ITEMS.register("water_lettuce", () -> new PlaceOnWaterBlockItem(BFBlocks.WATER_LETTUCE.get(), new Item.Properties()));
 
-	public static final RegistryObject<Item> CREATIVE_LETTUCE = ITEMS.register("creative_lettuce", ()->
-			new CreativeLettuceItem(new Item.Properties().rarity(Rarity.EPIC)));
+	public static final RegistryObject<Item> CREATIVE_LETTUCE = ITEMS.register("creative_lettuce", () -> new CreativeLettuceItem(new Item.Properties().rarity(Rarity.EPIC)));
 
 	private static final Item.Properties ADV = new Item.Properties().stacksTo(1).rarity(Rarity.EPIC);
 
@@ -42,5 +37,7 @@ public class BFItems {
 	public static final RegistryObject<Item> AZURE_TROPHY = ITEMS.register("azure_trophy", () -> new Item(ADV));
 	public static final RegistryObject<Item> WILDCARD = ITEMS.register("wildcard", () -> new Item(ADV));
 	public static final RegistryObject<Item> RANCHU = ITEMS.register("ranchu", () -> new Item(ADV));
+	public static final RegistryObject<Item> PAINTBRUSH = ITEMS.register("paintbrush", () -> new Item(ADV));
+	public static final RegistryObject<Item> GOLDEN_PAINTBRUSH = ITEMS.register("golden_paintbrush", () -> new Item(ADV));
 	public static final RegistryObject<Item> BUB = ITEMS.register("big_ol_bub", () -> new Item(ADV));
 }
