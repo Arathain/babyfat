@@ -12,6 +12,7 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -53,7 +54,7 @@ import java.util.Optional;
 import java.util.function.Consumer;
 
 public class Ranchu extends AbstractRanchu implements Bucketable {
-	private static final float MAX_SIZE = 2f;
+	public static final float MAX_SIZE = 2f;
 	private static final float MIN_SIZE = 0.8f;
 	public static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Float> SIZE_A = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.FLOAT);
@@ -411,6 +412,10 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 				child.setSizeA(random.nextBoolean() ? this.getSizeA() : ((Ranchu) ranchuB).getSizeA());
 				child.setSizeB(random.nextBoolean() ? this.getSizeB() : ((Ranchu) ranchuB).getSizeB());
 				child.reloadSize();
+			}
+			Player p = w.getNearestPlayer(this, 24.0);
+			if(p instanceof ServerPlayer s) {
+				BabyFat.RANCHU_SEX.trigger(s, child);
 			}
 		}
 		child.setPersistenceRequired();
