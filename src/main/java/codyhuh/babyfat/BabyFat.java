@@ -2,10 +2,13 @@ package codyhuh.babyfat;
 
 import codyhuh.babyfat.common.entities.Ranchu;
 import codyhuh.babyfat.common.entities.RanchuSexResultWatchpoint;
+import codyhuh.babyfat.common.entities.RanchuSexTrigger;
 import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
 import codyhuh.babyfat.registry.BFItems;
 import codyhuh.babyfat.registry.BFTabs;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.advancements.critereon.ChanneledLightningTrigger;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -45,7 +48,10 @@ public class BabyFat {
 		BFEntities.ENTITIES.register(bus);
 		BFBlocks.BLOCKS.register(bus);
 		BFTabs.TABS.register(bus);
+
 	}
+
+	public static final RanchuSexTrigger RANCHU_SEX = new RanchuSexTrigger();
 
 	public static ResourceLocation id(String path) {
 		return new ResourceLocation(BabyFat.MOD_ID, path);
@@ -58,8 +64,8 @@ public class BabyFat {
 	private void registerCommon(FMLCommonSetupEvent event) {
 		SpawnPlacements.register(BFEntities.RANCHU.get(), SpawnPlacements.Type.IN_WATER, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, Ranchu::checkFishSpawnRules);
 
-
 		event.enqueueWork(() -> {
+			CriteriaTriggers.register(RANCHU_SEX);
 			ComposterBlock.COMPOSTABLES.put(BFItems.WATER_LETTUCE.get(), 0.65F);
 		});
 	}

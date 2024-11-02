@@ -1,6 +1,7 @@
 package codyhuh.babyfat.common.entities;
 
 import codyhuh.babyfat.BabyFat;
+import codyhuh.babyfat.common.entities.goal.OldRanchuBreedGoal;
 import codyhuh.babyfat.common.entities.goal.RanchuBreedGoal;
 import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
@@ -11,15 +12,14 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
@@ -30,7 +30,6 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingLookControl;
 import net.minecraft.world.entity.ai.control.SmoothSwimmingMoveControl;
-import net.minecraft.world.entity.ai.goal.BreedGoal;
 import net.minecraft.world.entity.ai.goal.PanicGoal;
 import net.minecraft.world.entity.ai.goal.RandomSwimmingGoal;
 import net.minecraft.world.entity.ai.goal.TemptGoal;
@@ -53,10 +52,9 @@ import net.minecraftforge.common.Tags;
 import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Supplier;
 
-public class Ranchu extends Animal implements Bucketable {
-	private static final float MAX_SIZE = 2f;
+public class Ranchu extends AbstractRanchu implements Bucketable {
+	public static final float MAX_SIZE = 2f;
 	private static final float MIN_SIZE = 0.8f;
 	public static final EntityDataAccessor<Integer> VARIANT = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Float> SIZE_A = SynchedEntityData.defineId(Ranchu.class, EntityDataSerializers.FLOAT);
@@ -66,7 +64,7 @@ public class Ranchu extends Animal implements Bucketable {
 	public static final Ingredient FOOD_ITEMS = Ingredient.of(BFItems.WATER_LETTUCE.get());
 	private float size = -1f;
 
-	public Ranchu(EntityType<? extends Animal> type, Level worldIn) {
+	public Ranchu(EntityType<? extends AbstractRanchu> type, Level worldIn) {
 		super(type, worldIn);
 		this.lookControl = new SmoothSwimmingLookControl(this, 10);
 		this.moveControl = new SmoothSwimmingMoveControl(this, 85, 10, 0.02F, 0.1F, true);
@@ -89,7 +87,7 @@ public class Ranchu extends Animal implements Bucketable {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(0, new PanicGoal(this, 1.25D));
-		this.goalSelector.addGoal(1, new BreedGoal(this, 1.5D));
+		this.goalSelector.addGoal(1, new RanchuBreedGoal(this, 1.5D));
 		//this.goalSelector.addGoal(1, new RanchuBreedGoal(this, 1.25D));
 		this.goalSelector.addGoal(2, new TemptGoal(this, 1.25D, FOOD_ITEMS, false));
 		this.goalSelector.addGoal(4, new RandomSwimmingGoal(this, 1.5, 1));
@@ -108,26 +106,44 @@ public class Ranchu extends Animal implements Bucketable {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
 
-		if (getVariant() != -1) {
-			return spawnDataIn;
-		}
-		int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
-		int i;
-		int base = 4;
-		int pat1 = random.nextInt(64);
-		int pat2 = random.nextInt(64);
-		int baseColour = wCIndex;
-		int c1 = wCIndex;
-		int c2 = wCIndex;
+		if (reason == MobSpawnType.BUCKET && dataTag != null && dataTag.contains("Variant", 3)) {
 
-		i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
-		this.setTail(random.nextInt(3));
-		this.setVariant(i);
-		float gA = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
-		float gB = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
-		this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
-		this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
-		reloadSize();
+			this.setSizeA(dataTag.getFloat("sizeA"));
+			this.setSizeB(dataTag.getFloat("sizeB"));
+			this.setVariant(dataTag.getInt("Variant"));
+			this.setTail(dataTag.getByte("Tail"));
+
+			if (dataTag.contains("Age")) {
+				this.setAge(dataTag.getInt("Age"));
+			}
+
+			this.setCanGrowUp(dataTag.getBoolean("CanGrowUp"));
+
+		}else {
+
+			if (getVariant() != -1) {
+				return spawnDataIn;
+			}
+			int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
+			int i;
+			int base = 4;
+			int pat1 = random.nextInt(64);
+			int pat2 = random.nextInt(64);
+			int baseColour = wCIndex;
+			int c1 = wCIndex;
+			int c2 = wCIndex;
+
+			i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
+			this.setTail(random.nextInt(3));
+			this.setVariant(i);
+			float gA = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
+			float gB = Math.min(Math.abs((float)random.nextGaussian())*0.5f, 1f);
+			this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
+			this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
+			reloadSize();
+
+		}
+
 		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 	}
 
@@ -177,6 +193,7 @@ public class Ranchu extends Animal implements Bucketable {
 		compoundnbt.putInt("Variant", this.getVariant());
 		compoundnbt.putByte("Tail", (byte)getTail());
 		compoundnbt.putInt("Age", this.getAge());
+		compoundnbt.putBoolean("CanGrowUp", this.getCanGrowUp());
 	}
 
 	@Override
@@ -367,7 +384,7 @@ public class Ranchu extends Animal implements Bucketable {
 
 	@Nullable
 	@Override
-	public Ranchu getBreedOffspring(ServerLevel w, AgeableMob ranchuB) {
+	public Ranchu getBreedOffspring(ServerLevel w, AbstractRanchu ranchuB) {
 			Ranchu child = BFEntities.RANCHU.get().create(w);
 			RandomSource rand = this.getRandom();
 		if (ranchuB instanceof Ranchu r) {
@@ -395,6 +412,10 @@ public class Ranchu extends Animal implements Bucketable {
 				child.setSizeA(random.nextBoolean() ? this.getSizeA() : ((Ranchu) ranchuB).getSizeA());
 				child.setSizeB(random.nextBoolean() ? this.getSizeB() : ((Ranchu) ranchuB).getSizeB());
 				child.reloadSize();
+			}
+			Player p = w.getNearestPlayer(this, 24.0);
+			if(p instanceof ServerPlayer s) {
+				BabyFat.RANCHU_SEX.trigger(s, child);
 			}
 		}
 		child.setPersistenceRequired();
