@@ -1,10 +1,7 @@
 package codyhuh.babyfat.common.entities;
 
 import codyhuh.babyfat.BabyFat;
-import codyhuh.babyfat.common.advancements.BFCriterion;
-import codyhuh.babyfat.registry.BFCriteriaTriggers;
 import codyhuh.babyfat.registry.BFItems;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
@@ -333,16 +330,6 @@ public abstract class AbstractRanchu extends WaterAnimal {
             return;
         }
         if (ageablemob != null) {
-
-            ServerPlayer serverplayer = this.getLoveCause();
-            if (serverplayer == null && pMate.getLoveCause() != null) {
-                serverplayer = pMate.getLoveCause();
-            }
-
-            if (serverplayer != null) {
-                serverplayer.awardStat(Stats.ANIMALS_BRED);
-                BFCriterion.BREED_RANCHUS.trigger(serverplayer);
-            }
 
             ageablemob.setAge(-12000);
             ageablemob.moveTo(this.getX(), this.getY(), this.getZ(), 0.0F, 0.0F);
