@@ -7,6 +7,7 @@ import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
 import codyhuh.babyfat.registry.BFItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.data.advancements.packs.VanillaHusbandryAdvancements;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
