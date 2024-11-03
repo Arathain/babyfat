@@ -17,6 +17,7 @@ public class BFTabs {
                     .displayItems((displayParams, output) -> {
                         output.accept(BFItems.RANCHU_BUCKET.get());
                         output.accept(BFItems.RANCHU_SPAWN_EGG.get());
+                        output.accept(BFItems.BABY_BLUE_RIBBON.get());
                         output.accept(BFItems.WATER_LETTUCE.get());
                         output.accept(BFItems.CREATIVE_LETTUCE.get());
                     })

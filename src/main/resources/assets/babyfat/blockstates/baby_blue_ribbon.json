@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "babyfat:block/baby_blue_ribbon",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "babyfat:block/baby_blue_ribbon",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "babyfat:block/baby_blue_ribbon"
+    },
+    "facing=west": {
+      "model": "babyfat:block/baby_blue_ribbon",
+      "y": 90
+    }
+  }
+}

@@ -1,8 +1,11 @@
 package codyhuh.babyfat.registry;
 
 import codyhuh.babyfat.BabyFat;
+import codyhuh.babyfat.common.blocks.RibbonBlock;
 import codyhuh.babyfat.common.blocks.WaterLettuceBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DirectionalBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.registries.DeferredRegister;
@@ -13,4 +16,5 @@ public class BFBlocks {
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BabyFat.MOD_ID);
 
 	public static final RegistryObject<Block> WATER_LETTUCE = BLOCKS.register("water_lettuce", () -> new WaterLettuceBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.LILY_PAD).noOcclusion()));
+	public static final RegistryObject<Block> BABY_BLUE_RIBBON = BLOCKS.register("baby_blue_ribbon", () -> new RibbonBlock(BlockBehaviour.Properties.of().noCollission().instabreak().sound(SoundType.WOOL).noOcclusion()));
 }
