@@ -48,6 +48,7 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
+import org.joml.Matrix3d;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -404,7 +405,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
 			child.setTail(random.nextBoolean() ? this.getTail() : ((Ranchu) ranchuB).getTail());
 			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
-			if(w.getBiome(this.blockPosition()).is(Tags.Biomes.IS_MUSHROOM) && random.nextFloat() > 0.1f) {
+			if(w.getBiome(this.blockPosition()).is(Tags.Biomes.IS_MUSHROOM) && random.nextFloat() > 0.6f) {
 				child.setSizeA(Math.max(this.getSizeA(), ((Ranchu) ranchuB).getSizeA()));
 				child.setSizeB(Math.max(this.getSizeB(), ((Ranchu) ranchuB).getSizeB()));
 				child.reloadSize();

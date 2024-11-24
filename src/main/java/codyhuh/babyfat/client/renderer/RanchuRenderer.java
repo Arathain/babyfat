@@ -179,7 +179,7 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 
 				colourImage(cbImage, baseImage);
 			}
-			if(base != 4) {
+			if(base == 0) {
 				AbstractTexture p1t = t.getTexture(TEXTURE_PATTERNS[pat1]);
 				NativeImage p1Image = loadImage(p1t);
 				AbstractTexture c1t = t.getTexture(TEXTURE_COLOURS[c1]);
