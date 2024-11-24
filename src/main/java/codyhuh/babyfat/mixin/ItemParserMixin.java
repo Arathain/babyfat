@@ -8,7 +8,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 
 @Mixin(ItemParser.class)
 public class ItemParserMixin {
