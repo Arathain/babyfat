@@ -1,0 +1,50 @@
+{
+  "colour": "redwood",
+  "crosses": [
+    {
+      "colour_1": "syrup",
+      "colour_2": "apricot",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "rust",
+      "colour_2": "syrup",
+      "weight": 0.10
+    },
+    {
+      "colour_1": "chocolate",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "rocksalt",
+      "colour_2": "chocolate",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "rose",
+      "colour_2": "pearl",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "pearl",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "rose",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "rocksalt",
+      "weight": 0.15
+    }
+  ]
+}

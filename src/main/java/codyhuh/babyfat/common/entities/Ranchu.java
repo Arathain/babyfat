@@ -1,13 +1,11 @@
 package codyhuh.babyfat.common.entities;
 
 import codyhuh.babyfat.BabyFat;
-import codyhuh.babyfat.common.entities.goal.OldRanchuBreedGoal;
 import codyhuh.babyfat.common.entities.goal.RanchuBreedGoal;
 import codyhuh.babyfat.registry.BFBlocks;
 import codyhuh.babyfat.registry.BFEntities;
 import codyhuh.babyfat.registry.BFItems;
 import net.minecraft.core.BlockPos;
-import net.minecraft.data.advancements.packs.VanillaHusbandryAdvancements;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -49,7 +47,6 @@ import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.Tags;
-import org.joml.Matrix3d;
 
 import javax.annotation.Nullable;
 import java.util.Optional;
@@ -379,6 +376,24 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 		}
 	}
 
+    protected int validateSpecial(String baseCol, int base) {
+        switch (baseCol) {
+            case "azure" -> {
+                setTail(3);
+                base = 1;
+            }
+            case "onyx" -> {
+                setTail(4);
+                base = 2;
+            }
+            case "opal" -> {
+                setTail(5);
+                base = 3;
+            }
+        }
+        return base;
+    }
+
 	@Override
 	protected boolean shouldDespawnInPeaceful() {
 		return false;
@@ -404,8 +419,15 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			}
 			BabyFat.LOGGER.info("Child conceived: \n" + "base: " + base + "\npattern 1: " + pat1 + "\npattern 2: " + pat2 + "\nbasecolour: " + baseColour + getColourName(baseColour)
 			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
+
 			child.setTail(random.nextBoolean() ? this.getTail() : ((Ranchu) ranchuB).getTail());
-			child.setVariant(base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5));
+
+            if(mutated[0] != -1) {
+                base = child.validateSpecial(RanchuSexResolver.RanchuColour.values()[baseColour].name().toLowerCase(), base);
+            }
+
+            child.setVariant(base + (pat1 << 3) + (pat2 << 3 + 6) + (baseColour << 3 + 6 + 6) + (c1 << 3 + 6 + 6 + 5) + (c2 << 3 + 6 + 6 + 5 + 5));
+
 			if(w.getBiome(this.blockPosition()).is(Tags.Biomes.IS_MUSHROOM) && random.nextFloat() > 0.6f) {
 				child.setSizeA(Math.max(this.getSizeA(), ((Ranchu) ranchuB).getSizeA()));
 				child.setSizeB(Math.max(this.getSizeB(), ((Ranchu) ranchuB).getSizeB()));
@@ -415,6 +437,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 				child.setSizeB(random.nextBoolean() ? this.getSizeB() : ((Ranchu) ranchuB).getSizeB());
 				child.reloadSize();
 			}
+
 			Player p = w.getNearestPlayer(this, 24.0);
 			if(p instanceof ServerPlayer s) {
 				BabyFat.RANCHU_SEX.trigger(s, child);

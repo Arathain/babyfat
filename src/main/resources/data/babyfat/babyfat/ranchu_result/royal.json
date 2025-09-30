@@ -1,0 +1,65 @@
+{
+  "colour": "royal",
+  "crosses": [
+    {
+      "colour_1": "chocolate",
+      "colour_2": "pearl",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "gold",
+      "colour_2": "chocolate",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "pearl",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "gold",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "bitumen",
+      "colour_2": "silver",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "silver",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "silver",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "azure",
+      "colour_2": "silver",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "bitumen",
+      "colour_2": "azure",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "azure",
+      "colour_2": "charcoal",
+      "weight": 0.15
+    }
+  ]
+}

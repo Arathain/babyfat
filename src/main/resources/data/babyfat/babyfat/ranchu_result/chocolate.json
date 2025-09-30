@@ -1,0 +1,30 @@
+{
+  "colour": "chocolate",
+  "crosses": [
+    {
+      "colour_1": "rust",
+      "colour_2": "rust",
+      "weight": 0.10
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "rust",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "bitumen",
+      "colour_2": "gold",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "bitumen",
+      "colour_2": "plum",
+      "weight": 0.15
+    }
+  ]
+}

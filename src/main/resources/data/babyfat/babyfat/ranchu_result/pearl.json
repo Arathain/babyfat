@@ -1,0 +1,45 @@
+{
+  "colour": "pearl",
+  "crosses": [
+    {
+      "colour_1": "rust",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "rocksalt",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ginger",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "redwood",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "copper",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "silver",
+      "weight": 0.15
+    }
+  ]
+}

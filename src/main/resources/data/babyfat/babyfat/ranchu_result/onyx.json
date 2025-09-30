@@ -1,0 +1,15 @@
+{
+  "colour": "onyx",
+  "crosses": [
+    {
+      "colour_1": "charcoal",
+      "colour_2": "charcoal",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "charcoal",
+      "weight": 0.15
+    }
+  ]
+}

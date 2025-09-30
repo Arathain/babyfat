@@ -4,37 +4,37 @@
     {
       "colour_1": "ivory",
       "colour_2": "ivory",
-      "weight": 1.0
+      "weight": 0.05
     },
     {
       "colour_1": "silver",
       "colour_2": "ivory",
-      "weight": 1.0
+      "weight": 0.15
     },
     {
       "colour_1": "silver",
       "colour_2": "pale",
-      "weight": 1.0
+      "weight": 0.15
     },
     {
       "colour_1": "royal",
       "colour_2": "royal",
-      "weight": 1.0
+      "weight": 0.05
     },
     {
       "colour_1": "pearl",
       "colour_2": "pearl",
-      "weight": 1.0
+      "weight": 0.10
     },
     {
       "colour_1": "pearl",
       "colour_2": "ivory",
-      "weight": 1.0
+      "weight": 0.15
     },
     {
       "colour_1": "pale",
       "colour_2": "ivory",
-      "weight": 1.0
+      "weight": 0.15
     }
   ]
 }

@@ -1,0 +1,35 @@
+{
+  "colour": "rocksalt",
+  "crosses": [
+    {
+      "colour_1": "redwood",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ginger",
+      "colour_2": "pearl",
+      "weight": 0.10
+    },
+    {
+      "colour_1": "redwood",
+      "colour_2": "pearl",
+      "weight": 0.40
+    },
+    {
+      "colour_1": "rose",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "pearl",
+      "weight": 0.15
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "colour": "plum",
+  "crosses": [
+    {
+      "colour_1": "rocksalt",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "redwood",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "gold",
+      "colour_2": "gold",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "ginger",
+      "colour_2": "silver",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "ginger",
+      "weight": 0.15
+    }
+  ]
+}

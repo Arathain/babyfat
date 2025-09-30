@@ -1,0 +1,100 @@
+{
+  "colour": "bitumen",
+  "crosses": [
+    {
+      "colour_1": "royal",
+      "colour_2": "pyrite",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "electrum",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "gold",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "plum",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "ruby",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "pyrite",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "apricot",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "rust",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "chocolate",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "electrum",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "gold",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "pyrite",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "apricot",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "rust",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "chocolate",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "electrum",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "gold",
+      "weight": 0.15
+    }
+  ]
+}

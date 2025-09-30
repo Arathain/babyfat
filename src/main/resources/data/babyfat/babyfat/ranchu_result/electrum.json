@@ -1,37 +1,34 @@
 {
-  "colour": "apricot",
+  "colour": "electrum",
   "crosses": [
     {
-      "colour_1": "wild",
-      "colour_2": "wild",
-      "weight": 0.15
-    },
-    {
-      "colour_1": "ivory",
-      "colour_2": "syrup",
+      "colour_1": "pyrite",
+      "colour_2": "ivory",
       "weight": 0.15
     },
     {
       "colour_1": "pale",
-      "colour_2": "rust",
+      "colour_2": "apricot",
       "weight": 0.15
     },
-
     {
       "colour_1": "pearl",
-      "colour_2": "syrup",
-      "weight": 0.15
-    },
-
-    {
-      "colour_1": "gold",
       "colour_2": "pyrite",
       "weight": 0.15
     },
-
     {
-      "colour_1": "ruby",
+      "colour_1": "gold",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "silver",
       "colour_2": "gold",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "gold",
+      "colour_2": "pale",
       "weight": 0.15
     }
   ]

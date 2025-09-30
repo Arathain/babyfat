@@ -1,0 +1,35 @@
+{
+  "colour": "ginger",
+  "crosses": [
+    {
+      "colour_1": "rust",
+      "colour_2": "apricot",
+      "weight": 0.40
+    },
+    {
+      "colour_1": "redwood",
+      "colour_2": "apricot",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "redwood",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "chocolate",
+      "colour_2": "rust",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "rust",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "bitumen",
+      "colour_2": "rose",
+      "weight": 0.15
+    }
+  ]
+}

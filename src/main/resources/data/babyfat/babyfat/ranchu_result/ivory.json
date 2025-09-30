@@ -4,17 +4,17 @@
     {
       "colour_1": "wild",
       "colour_2": "wild",
-      "weight": 1.0
+      "weight": 0.15
     },
     {
       "colour_1": "pale",
       "colour_2": "pyrite",
-      "weight": 1.0
+      "weight": 0.15
     },
     {
       "colour_1": "electrum",
       "colour_2": "pale",
-      "weight": 1.0
+      "weight": 0.15
     }
   ]
 }

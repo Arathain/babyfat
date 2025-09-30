@@ -1,0 +1,35 @@
+{
+  "colour": "silver",
+  "crosses": [
+    {
+      "colour_1": "gold",
+      "colour_2": "pearl",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
+      "colour_2": "pearl",
+      "weight": 0.10
+    },
+    {
+      "colour_1": "azure",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "azure",
+      "colour_2": "pale",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "azure",
+      "colour_2": "pearl",
+      "weight": 0.15
+    }
+  ]
+}

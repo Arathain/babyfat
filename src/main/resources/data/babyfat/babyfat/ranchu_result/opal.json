@@ -1,0 +1,10 @@
+{
+  "colour": "opal",
+  "crosses": [
+    {
+      "colour_1": "azure",
+      "colour_2": "onyx",
+      "weight": 0.15
+    }
+  ]
+}

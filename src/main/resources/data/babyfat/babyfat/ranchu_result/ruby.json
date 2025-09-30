@@ -1,0 +1,25 @@
+{
+  "colour": "ruby",
+  "crosses": [
+    {
+      "colour_1": "rose",
+      "colour_2": "electrum",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "rose",
+      "colour_2": "gold",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "copper",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "silver",
+      "colour_2": "rose",
+      "weight": 0.15
+    }
+  ]
+}
