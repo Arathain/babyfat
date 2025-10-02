@@ -2,6 +2,7 @@ package codyhuh.babyfat.common.items;
 
 import codyhuh.babyfat.BabyFat;
 import codyhuh.babyfat.common.entities.Ranchu;
+import codyhuh.babyfat.common.entities.RanchuSexResolver;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.font.glyphs.SpecialGlyphs;
 import net.minecraft.client.gui.screens.Screen;
@@ -39,6 +40,14 @@ public class RanchuBucketItem extends MobBucketItem {
 		OPAL
 	}
 
+	private enum Bases {
+		PATTERNED,
+		AZURE,
+		ONYX,
+		OPAL,
+		WILD
+	}
+
 	@Override
 	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
 		super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
@@ -59,8 +68,20 @@ public class RanchuBucketItem extends MobBucketItem {
 					).withStyle(ChatFormatting.AQUA, ChatFormatting.BOLD);
 					pTooltipComponents.add(type);
 					pTooltipComponents.add(Component.literal(""));
+
+					int base = (2*2*2-1 & ego);
+					int pat1 = (2*2*2*2*2*2-1 & ego >> 3);
+					int pat2 = (2*2*2*2*2*2-1 & ego >> 3+6);
+					int c1 = (2*2*2*2*2-1 & ego >> 3+6+6+5);
+					int c2 = (2*2*2*2*2-1 & ego >> 3+6+6+5+5);
+					int baseColour = (2*2*2*2*2-1 & ego >> 3+6+6);
+
 					id = Component.literal(
-							(Integer.toBinaryString(ego) + " + " + StringUtils.leftPad(Integer.toBinaryString(tail), 2, "0"))
+							(StringUtils.capitalize(Bases.values()[base].name().toLowerCase()) + " Ranchu, patterns " + pat1 + " & " + pat2 + ". Colours " +
+									StringUtils.capitalize(RanchuSexResolver.RanchuColour.values()[baseColour].name().toLowerCase()) + ", " +
+									StringUtils.capitalize(RanchuSexResolver.RanchuColour.values()[c1].name().toLowerCase()) + ", & " +
+									StringUtils.capitalize(RanchuSexResolver.RanchuColour.values()[c2].name().toLowerCase()) + ". Tail " +
+									StringUtils.leftPad(Integer.toBinaryString(tail), 2, "0"))
 					).withStyle(ChatFormatting.DARK_AQUA, ChatFormatting.UNDERLINE, ChatFormatting.ITALIC);
 
 				} else {

@@ -76,9 +76,9 @@ public class RanchuSexTrigger extends SimpleCriterionTrigger<RanchuSexTrigger.Tr
         }
 
         public boolean matches(int tail, int base, int p1, int p2, boolean same_col, boolean golden_crown) {
-            System.out.println("Input data: " + tail + " " + base + " " + same_col + " " + golden_crown);
-            System.out.println("Predicate data: " + this.tail + " " + this.base + " " + this.c + " " + this.g);
-            System.out.println("Output data: " + (this.tail == -1 || this.tail == tail) + " " + (this.base == -1 || this.base == base) + " " + (c.isEmpty() || c.get() == same_col) + " " + (g.isEmpty() || g.get() == golden_crown));
+//            System.out.println("Input data: " + tail + " " + base + " " + same_col + " " + golden_crown);
+//            System.out.println("Predicate data: " + this.tail + " " + this.base + " " + this.c + " " + this.g);
+//            System.out.println("Output data: " + (this.tail == -1 || this.tail == tail) + " " + (this.base == -1 || this.base == base) + " " + (c.isEmpty() || c.get() == same_col) + " " + (g.isEmpty() || g.get() == golden_crown));
             return (this.tail == -1 || this.tail == tail)
                     &&
                     (this.base == -1 || this.base == base)

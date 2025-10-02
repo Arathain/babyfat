@@ -402,9 +402,9 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 	@Nullable
 	@Override
 	public Ranchu getBreedOffspring(ServerLevel w, AbstractRanchu ranchuB) {
-			Ranchu child = BFEntities.RANCHU.get().create(w);
-			RandomSource rand = this.getRandom();
-		if (ranchuB instanceof Ranchu r) {
+		Ranchu child = BFEntities.RANCHU.get().create(w);
+		RandomSource rand = this.getRandom();
+		if (ranchuB instanceof Ranchu r && child != null) {
 			// Feral + Feral
 			int base = pickBase(this, r, random);
 			int pat1 = pickPattern(this, r, random, false);
@@ -419,8 +419,6 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			}
 			BabyFat.LOGGER.info("Child conceived: \n" + "base: " + base + "\npattern 1: " + pat1 + "\npattern 2: " + pat2 + "\nbasecolour: " + baseColour + getColourName(baseColour)
 			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
-
-			child.setTail(random.nextBoolean() ? this.getTail() : ((Ranchu) ranchuB).getTail());
 
             if(mutated[0] != -1) {
                 base = child.validateSpecial(RanchuSexResolver.RanchuColour.values()[baseColour].name().toLowerCase(), base);
@@ -442,8 +440,8 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			if(p instanceof ServerPlayer s) {
 				BabyFat.RANCHU_SEX.trigger(s, child);
 			}
+			child.setPersistenceRequired();
 		}
-		child.setPersistenceRequired();
 
 		return child;
 	}
