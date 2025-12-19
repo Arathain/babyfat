@@ -2,6 +2,11 @@
   "colour": "pearl",
   "crosses": [
     {
+      "colour_1": "ivory",
+      "colour_2": "ivory",
+      "weight": 0.15
+    },
+    {
       "colour_1": "rust",
       "colour_2": "ivory",
       "weight": 0.15
@@ -40,6 +45,12 @@
       "colour_1": "royal",
       "colour_2": "silver",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.75
     }
   ]
 }

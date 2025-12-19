@@ -1,0 +1,13 @@
+{
+    "name": "Mushroom-Islands",
+    "advancement": "babyfat:book/miscellaneous_mushroom_island",
+    "icon": "minecraft:mycelium",
+    "category": "babyfat:main/miscellaneous",
+    "sortnum": 2,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Mushroom islands have a curious effect on ranchu $(l:miscellaneous/miscellaneous_size)size$(). $(br2) When ranchu are bred in these biomes, they have a higher chance of passing their bigger allele over their smaller allele!"
+        }
+    ]
+}

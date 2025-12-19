@@ -1,0 +1,22 @@
+{
+    "name": "Chocolate",
+    "advancement": "babyfat:book/bases_chocolate",
+    "icon": "babyfat:textures/gui/ranchu_colors/chocolate.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 2,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:138543104, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Chocolate",
+            "rarity_text": "Uncommon",
+            "rarity_color": "e77c56"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(rust) x $(rust)"
+        }
+    ]
+}

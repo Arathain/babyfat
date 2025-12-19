@@ -2,6 +2,21 @@
   "colour": "ruby",
   "crosses": [
     {
+      "colour_1": "silver",
+      "colour_2": "silver",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "plum",
+      "weight": 0.40
+    },
+    {
+      "colour_1": "rose",
+      "colour_2": "rose",
+      "weight": 0.40
+    },
+    {
       "colour_1": "rose",
       "colour_2": "electrum",
       "weight": 0.15
@@ -20,6 +35,12 @@
       "colour_1": "silver",
       "colour_2": "rose",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.05
     }
   ]
 }

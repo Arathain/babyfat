@@ -1,6 +1,7 @@
 {
   "colour": "pyrite",
   "crosses": [
+    
     {
       "colour_1": "wild",
       "colour_2": "wild",
@@ -43,6 +44,12 @@
       "colour_1": "gold",
       "colour_2": "syrup",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 1.0
     }
   ]
 }

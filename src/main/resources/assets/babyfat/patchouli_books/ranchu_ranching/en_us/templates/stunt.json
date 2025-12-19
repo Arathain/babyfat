@@ -1,0 +1,29 @@
+{
+    "components": [
+        {
+            "type": "patchouli:entity",
+            "entity": "#entity",
+            "x": 60,
+            "y": 50,
+            "scale": 0.25 
+        },
+        {
+            "type": "patchouli:frame",
+            "x": -1,
+            "y": 20
+        },
+        {
+            "type": "patchouli:header",
+            "text": "#rarity_text",
+            "color": "#rarity_color",
+            "x": -1,
+            "y": 132
+        },
+        {
+            "type": "patchouli:item",
+            "item": "minecraft:nether_wart",
+            "x": -75,
+            "y": 30
+        }
+    ]
+}

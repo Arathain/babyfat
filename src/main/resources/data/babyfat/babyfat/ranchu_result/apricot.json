@@ -16,7 +16,6 @@
       "colour_2": "rust",
       "weight": 0.15
     },
-
     {
       "colour_1": "pearl",
       "colour_2": "syrup",
@@ -33,6 +32,13 @@
       "colour_1": "ruby",
       "colour_2": "gold",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 1.0
     }
+
   ]
 }

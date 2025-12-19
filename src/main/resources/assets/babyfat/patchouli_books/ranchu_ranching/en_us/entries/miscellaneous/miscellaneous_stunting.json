@@ -1,0 +1,20 @@
+{
+    "name": "Stunting",
+    "advancement": "babyfat:book/breeding_stunting",
+    "icon": "minecraft:nether_wart",
+    "category": "babyfat:main/miscellaneous",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "$(br2)$(br2)Feeding $(bold)Nether Wart$() to baby ranchu stunts their growth, keeping them young forever!"
+        },
+        {
+            "type": "stunt",
+            "entity": "babyfat:ranchu{Variant:4, sizeA:1, sizeB:1, Tail:0, Age:-1200}",
+            "offset": -0.25,
+            "scale": 0.5,
+            "name": "..."
+        }
+    ]
+}

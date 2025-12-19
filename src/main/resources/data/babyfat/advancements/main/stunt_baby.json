@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:nether_wart"
+    },
+    "title": {
+      "translate": "babyfat.advancement.stunt_baby"
+    },
+    "description": {
+      "translate": "babyfat.advancement.stunt_baby.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "babyfat:main/breed_ranchu",
+  "criteria": {
+    "stunt_baby": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:nether_wart"
+          ]
+        },
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "babyfat:ranchu",
+              "flags": {
+                "is_baby": true
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "stunt_baby"
+    ]
+  ]
+}

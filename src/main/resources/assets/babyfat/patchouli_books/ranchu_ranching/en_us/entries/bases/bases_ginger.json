@@ -1,0 +1,22 @@
+{
+    "name": "Ginger",
+    "advancement": "babyfat:book/bases_ginger",
+    "icon": "babyfat:textures/gui/ranchu_colors/ginger.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 2,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:242450432, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Ginger",
+            "rarity_text": "Uncommon",
+            "rarity_color": "e77c56"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(syrup) x $(syrup)"
+        }
+    ]
+}

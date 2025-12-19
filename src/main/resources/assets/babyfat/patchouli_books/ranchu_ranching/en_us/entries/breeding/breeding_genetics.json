@@ -1,0 +1,11 @@
+{
+    "name": "Traits",
+    "icon": "babyfat:textures/item/ranchu.png",
+    "category": "babyfat:main/breeding",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Ranchu have various traits; $(list)$(l:main/bases)Bases & Colors$() $(list)$(l:main/patterns)Patterns $() $(list)$(l:main/tails)Tail-Shapes$() $(br2) In babies, traits are equally likely to come from either parent. $(br2) During breeding, a $(l:breeding/breeding_mutations)color mutation$() may occur, producing a         unique color.$()"
+        }
+    ]
+}

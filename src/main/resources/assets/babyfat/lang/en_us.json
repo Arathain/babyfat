@@ -17,11 +17,44 @@
 
   "entity.babyfat.ranchu": "Ranchu",
   "block.babyfat.water_lettuce": "Water Lettuce",
+  "block.babyfat.baby_blue_ribbon": "Baby Blue Ribbon",
 
   "tooltip.babyfat.domesticated": "Domesticated",
 
   "itemGroup.babyfat": "Baby Fat",
 
   "item.babyfat.creative_lettuce": "Creative Lettuce",
-  "tooltip.babyfat.creativelettuce" : "When fed to a ranchu, resets breeding cooldown or fully ages the ranchu"
+  "tooltip.babyfat.creativelettuce" : "When fed to a ranchu, resets breeding cooldown or fully ages the ranchu",
+
+  "babyfat.advancement.big_gene": "Big Ol' Bub",
+  "babyfat.advancement.big_gene.desc": "Breed the largest possible Ranchu! You're gonna need a bigger bucket...",
+  "babyfat.advancement.stunt_baby": "Baby... Babyfat?",
+  "babyfat.advancement.stunt_baby.desc": "Feed a baby Ranchu Nether Wart to stunt it's growth",
+  "babyfat.advancement.root": "Babyfat",
+  "babyfat.advancement.root.desc": "Breed and nurture Ranchu goldfish!",
+  "babyfat.advancement.breed_pattern": "Odd Little Guy...",
+  "babyfat.advancement.breed_pattern.desc": "Obtain a patterned Ranchu",
+  "babyfat.advancement.place_ribbon": "Best in Show",
+  "babyfat.advancement.place_ribbon.desc": "Place your Baby Blue Ribbon. Congratulations!",
+  "babyfat.advancement.collect_pattern": "Pattern Passion",
+  "babyfat.advancement.collect_pattern.desc": "Collect all possible Ranchu patterns!",
+
+  "babyfat.advancement.breed_ranchu": "Ranched-yous?",
+  "babyfat.advancement.breed_ranchu.desc": "Breed two Ranchu together",
+  "babyfat.advancement.breed_mutate": "Wildcard!",
+  "babyfat.advancement.breed_mutate.desc": "Obtain a color mutation from breeding Wild Ranchu",
+  "babyfat.advancement.breed_tier_2": "Vivid!",
+  "babyfat.advancement.breed_tier_2.desc": "Breed all possible Uncommon Ranchu color mutations",
+  "babyfat.advancement.breed_tier_3": "Shiny...",
+  "babyfat.advancement.breed_tier_3.desc": "Breed all possible Rare Ranchu color mutations",
+  "babyfat.advancement.breed_tier_4": "Fancy...",
+  "babyfat.advancement.breed_tier_4.desc": "Breed all possible Super-Rare Ranchu color mutations",
+  "babyfat.advancement.breed_tier_5": "Pure.",
+  "babyfat.advancement.breed_tier_5.desc": "Breed all possible Extraordinary Ranchu color mutations",
+  "babyfat.advancement.breed_azure": "Like a Gem.",
+  "babyfat.advancement.breed_azure.desc": "Breed an Azure Ranchu",
+  "babyfat.advancement.breed_onyx": "Carbonado",
+  "babyfat.advancement.breed_onyx.desc": "Breed an Onyx Ranchu",
+  "babyfat.advancement.breed_opal": "Magnum Ranch-us",
+  "babyfat.advancement.breed_opal.desc": "Breed an Opal Ranchu"
 }

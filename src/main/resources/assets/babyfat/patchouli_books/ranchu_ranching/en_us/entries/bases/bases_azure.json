@@ -1,0 +1,22 @@
+{
+    "name": "Azure",
+    "advancement": "babyfat:book/bases_azure",
+    "icon": "babyfat:textures/gui/ranchu_colors/azure.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 6,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:34603009, sizeA:1, sizeB:1, Tail:3}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Azure",
+            "rarity_text": "Legendary",
+            "rarity_color": "caacd4"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(ruby) x $(ruby) $(br2) Azure ranchus have a unique $(l:main/tails)tail-shape$() that their offspring may inherit."
+        }
+    ]
+}

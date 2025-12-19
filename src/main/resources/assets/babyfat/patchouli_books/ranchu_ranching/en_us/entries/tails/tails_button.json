@@ -1,0 +1,20 @@
+{
+    "name": "Buttontail",
+    "advancement": "babyfat:book/tails_button",
+    "icon": "babyfat:textures/gui/ranchu_tails/button.png",
+    "category": "babyfat:main/tails",
+    "sortnum": 0,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:4, sizeA:1, sizeB:1, Tail:0}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Buttontail"
+        },
+        {
+            "type": "patchouli:text",
+            "text": " Found in $(wild) ranchu.",
+            "title": "Obtaining"
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "name": "Size",
+    "advancement": "babyfat:main/breed_ranchu",
+    "icon": "babyfat:textures/item/big_ol_bub.png",
+    "category": "babyfat:main/miscellaneous",
+    "sortnum": 1,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "A ranchu's size is based on two sized alleles. $(br2) The ranchu's size is whatever the smaller allele of the two is. $(br2) During breeding, either allele is equally likely to be inherited, however $(l:miscellaneous/miscellaneous_mushroom_island)some biomes$() may influence these        chances..."
+        },
+        {
+            "type": "patchouli:image",
+            "text": " $(italic)The smaller allele is    always dominant",
+            "images": ["babyfat:textures/gui/entries/size.png"],
+            "border": true
+        }
+    ]
+}

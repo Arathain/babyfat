@@ -1,0 +1,38 @@
+{
+  "criteria": {
+    "book_p1_24": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 24,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_24": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 24
+            }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "book_p1_24",
+      "book_p2_24"
+    ]
+    ]
+}
+
+

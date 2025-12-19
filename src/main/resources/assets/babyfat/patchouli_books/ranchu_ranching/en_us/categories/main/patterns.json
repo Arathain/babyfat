@@ -1,0 +1,6 @@
+{
+    "name": "Patterns",
+    "description": " Two patterns are present in all ranchu, however they only show in non-$(l:bases/bases_wild)wild$() ranchu. $(br2) These patterns have an equal chance to be passed onto babies. $(br2) Pattern colors can also contribute to a $(l:breeding/breeding_mutations)color mutation$().",
+    "icon": "babyfat:textures/gui/patterns.png",
+    "sortnum": 3
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Apricot",
+    "advancement": "babyfat:book/bases_apricot",
+    "icon": "babyfat:textures/gui/ranchu_colors/apricot.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 1,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:0, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Apricot",
+            "rarity_text": "Common",
+            "rarity_color": "$(common)"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(list)$(wild) x $(wild)",
+            "title": "Can be bred from:"
+        }
+    ]
+}

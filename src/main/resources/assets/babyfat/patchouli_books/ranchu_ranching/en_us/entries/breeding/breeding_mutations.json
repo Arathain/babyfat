@@ -1,0 +1,18 @@
+{
+    "name": "Color Mutations",
+    "icon": "babyfat:textures/item/ranchu_bucket.png",
+    "sortnum": 2,
+    "category": "babyfat:main/breeding",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": " Occasionally, a color mutation may occur when certain ranchu are bred together. $(br2) A common way to do this is by breeding two ranchu of the $(bold)same color$() together. $(br2)This creates a brand new color in the offspring, unlike both      the parents.$()"
+        },
+        {
+            "type": "patchouli:image",
+            "text": "$(italic) Breeding wild ranchu   together can yield      various mutations.",
+            "images": ["babyfat:textures/gui/entries/mutations.png"],
+            "border": true
+        }
+    ]
+}

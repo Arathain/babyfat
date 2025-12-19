@@ -1,0 +1,21 @@
+{
+    "name": "Wild",
+    "icon": "babyfat:textures/gui/ranchu_colors/wild.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 0,
+    "pages": [
+        {
+            "type": "base",
+            "entity": "babyfat:ranchu{Variant:4, sizeA:1, sizeB:1}",
+            "offset": -0.25,
+            "header_text": "Wild",
+            "rarity_text": "Common",
+            "rarity_color": "$(common)"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(br) Found naturally in       river biomes.",
+            "title": "Spawning:"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "Rose",
+    "advancement": "babyfat:book/bases_rose",
+    "icon": "babyfat:textures/gui/ranchu_colors/rose.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 4,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:623443968, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Rose",
+            "rarity_text": "Super-Rare",
+            "rarity_color": "e9b115"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(rocksalt) x $(rocksalt)"
+        }
+    ]
+}

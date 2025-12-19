@@ -3,6 +3,11 @@
   "crosses": [
     {
       "colour_1": "chocolate",
+      "colour_2": "chocolate",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "chocolate",
       "colour_2": "pearl",
       "weight": 0.15
     },
@@ -60,6 +65,12 @@
       "colour_1": "azure",
       "colour_2": "charcoal",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.5
     }
   ]
 }

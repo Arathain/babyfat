@@ -1,0 +1,22 @@
+{
+    "name": "Electrum",
+    "advancement": "babyfat:book/bases_electrum",
+    "icon": "babyfat:textures/gui/ranchu_colors/electrum.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 2,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:207814656, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Electrum",
+            "rarity_text": "Uncommon",
+            "rarity_color": "e77c56"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(pyrite) x $(pyrite)"
+        }
+    ]
+}

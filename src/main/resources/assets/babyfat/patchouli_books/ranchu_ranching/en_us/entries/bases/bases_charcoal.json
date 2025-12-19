@@ -1,0 +1,23 @@
+{
+    "name": "Charcoal",
+    "advancement": "babyfat:book/bases_charcoal",
+    "icon": "babyfat:textures/gui/ranchu_colors/charcoal.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 5,
+    "pages": [
+        
+        {
+            "entity": "babyfat:ranchu{Variant:103907328, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Charcoal",
+            "rarity_text": "Extraordinary",
+            "rarity_color": "1aaaa7"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(bitumen) x $(bitumen)"
+        }
+    ]
+}

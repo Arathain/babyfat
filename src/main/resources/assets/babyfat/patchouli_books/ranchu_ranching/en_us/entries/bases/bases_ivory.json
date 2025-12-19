@@ -1,0 +1,23 @@
+{
+    "name": "Ivory",
+    "advancement": "babyfat:book/bases_ivory",
+    "icon": "babyfat:textures/gui/ranchu_colors/ivory.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 1,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:311721984, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Ivory",
+            "rarity_text": "Common",
+            "rarity_color": "$(common)"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(wild) x $(wild)"
+        }
+        
+    ]
+}

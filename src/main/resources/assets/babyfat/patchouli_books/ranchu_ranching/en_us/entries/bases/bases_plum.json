@@ -1,0 +1,23 @@
+{
+    "name": "Plum",
+    "advancement": "babyfat:book/bases_plum",
+    "icon": "babyfat:textures/gui/ranchu_colors/plum.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 4,
+    "pages": [
+       
+        {
+            "entity": "babyfat:ranchu{Variant:484900864, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Plum",
+            "rarity_text": "Super-Rare",
+            "rarity_color": "e9b115"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(copper) x $(copper)"
+        }
+    ]
+}

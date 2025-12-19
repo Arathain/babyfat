@@ -2,6 +2,11 @@
   "colour": "ivory",
   "crosses": [
     {
+      "colour_1": "rust",
+      "colour_2": "apricot",
+      "weight": 0.15
+    },
+    {
       "colour_1": "wild",
       "colour_2": "wild",
       "weight": 0.15
@@ -15,6 +20,12 @@
       "colour_1": "electrum",
       "colour_2": "pale",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 1.0
     }
   ]
 }

@@ -1,0 +1,22 @@
+{
+    "name": "Redwood",
+    "advancement": "babyfat:book/bases_redwood",
+    "icon": "babyfat:textures/gui/ranchu_colors/redwood.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 2,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:554172416, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Redwood",
+            "rarity_text": "Uncommon",
+            "rarity_color": "e77c56"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(syrup) x $(syrup)"
+        }
+    ]
+}

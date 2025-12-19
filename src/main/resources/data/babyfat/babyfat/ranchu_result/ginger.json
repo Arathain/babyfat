@@ -2,6 +2,11 @@
   "colour": "ginger",
   "crosses": [
     {
+      "colour_1": "apricot",
+      "colour_2": "apricot",
+      "weight": 0.15
+    },
+    {
       "colour_1": "rust",
       "colour_2": "apricot",
       "weight": 0.40
@@ -30,6 +35,12 @@
       "colour_1": "bitumen",
       "colour_2": "rose",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.75
     }
   ]
 }

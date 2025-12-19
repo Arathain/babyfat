@@ -1,0 +1,14 @@
+{
+    "name": "Ornate",
+    "advancement": "babyfat:book/patterns_30",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/30.png",
+            "type": "pattern",
+            "header_text": "Ornate"
+        }
+    ]
+}

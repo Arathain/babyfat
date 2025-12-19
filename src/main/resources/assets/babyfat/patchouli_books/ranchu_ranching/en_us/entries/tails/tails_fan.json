@@ -1,0 +1,20 @@
+{
+    "name": "Fantail",
+    "advancement": "babyfat:book/tails_fan",
+    "icon": "babyfat:textures/gui/ranchu_tails/fan.png",
+    "category": "babyfat:main/tails",
+    "sortnum": 1,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:4, sizeA:1, sizeB:1, Tail:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Fantail"
+        },
+        {
+            "type": "patchouli:text",
+            "text": " Found in $(wild) ranchu.",
+            "title": "Obtaining"
+        }
+    ]
+}

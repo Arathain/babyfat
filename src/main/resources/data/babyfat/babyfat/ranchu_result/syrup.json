@@ -30,6 +30,12 @@
       "colour_1": "chocolate",
       "colour_2": "electrum",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 1.0
     }
   ]
 }

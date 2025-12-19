@@ -1,0 +1,22 @@
+{
+    "name": "Pale",
+    "advancement": "babyfat:book/bases_pale",
+    "icon": "babyfat:textures/gui/ranchu_colors/pale.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 2,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:415629312, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Pale",
+            "rarity_text": "Uncommon",
+            "rarity_color": "e77c56"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)Pale ranchu have a    chance of mutating      from breeding any      two ranchu of the       same color together."
+        }
+    ]
+}

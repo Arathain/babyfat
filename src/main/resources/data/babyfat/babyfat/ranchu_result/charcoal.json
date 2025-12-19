@@ -3,6 +3,11 @@
   "crosses": [
     {
       "colour_1": "bitumen",
+      "colour_2": "bitumen",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "bitumen",
       "colour_2": "royal",
       "weight": 0.15
     },
@@ -20,6 +25,12 @@
       "colour_1": "onyx",
       "colour_2": "bitumen",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.05
     }
   ]
 }

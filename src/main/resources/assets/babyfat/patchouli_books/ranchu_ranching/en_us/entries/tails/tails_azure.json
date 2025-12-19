@@ -1,0 +1,20 @@
+{
+    "name": "Azuretail",
+    "advancement": "babyfat:book/tails_azure",
+    "icon": "babyfat:textures/gui/ranchu_tails/azure.png",
+    "category": "babyfat:main/tails",
+    "sortnum": 3,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:4, sizeA:1, sizeB:1, Tail:3}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Azuretail"
+        },
+        {
+            "type": "patchouli:text",
+            "text": " Found in $(azure) ranchu.",
+            "title": "Obtaining"
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "Shirt",
+    "advancement": "babyfat:book/patterns_45",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/45.png",
+            "type": "pattern",
+            "header_text": "Shirt"
+        }
+    ]
+}

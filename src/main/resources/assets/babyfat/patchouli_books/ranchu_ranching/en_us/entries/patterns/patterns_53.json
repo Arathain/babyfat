@@ -1,0 +1,14 @@
+{
+    "name": "Splotches",
+    "advancement": "babyfat:book/patterns_53",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/53.png",
+            "type": "pattern",
+            "header_text": "Splotches"
+        }
+    ]
+}

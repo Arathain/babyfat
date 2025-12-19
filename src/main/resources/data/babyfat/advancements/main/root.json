@@ -1,0 +1,51 @@
+{
+  "criteria": {
+    "pick_up_water_lettuce": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "babyfat:water_lettuce"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "pick_up_ranchu_bucket": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "babyfat:ranchu_bucket"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/block/blue_wool.png",
+    "description": {
+      "translate": "babyfat.advancement.root.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "babyfat:ranchu"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "babyfat.advancement.root"
+    }
+  },
+  "requirements": [
+    [
+      "pick_up_water_lettuce",
+      "pick_up_ranchu_bucket"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

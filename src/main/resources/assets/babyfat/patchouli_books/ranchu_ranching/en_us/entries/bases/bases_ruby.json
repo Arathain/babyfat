@@ -1,0 +1,23 @@
+{
+    "name": "Ruby",
+    "advancement": "babyfat:book/bases_ruby",
+    "icon": "babyfat:textures/gui/ranchu_colors/ruby.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 5,
+    "pages": [
+        
+        {
+            "entity": "babyfat:ranchu{Variant:692715520, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Ruby",
+            "rarity_text": "Extraordinary",
+            "rarity_color": "1aaaa7"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(rose) x $(rose)$(list)$(silver) x $(silver)$(list)$(plum) x $(plum)"
+        }
+    ]
+}

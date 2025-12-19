@@ -1,0 +1,6 @@
+{
+    "name": "Bases & Colors",
+    "description": "In the wild, ranchu only come in one color. $(br) However, using $(l:breeding/breeding_mutations)color mutations$(), ranchu can be bred to show a diverse array of colors.$() $(br2) Colors apply to both patterns and the base color of a ranchu.",
+    "icon": "babyfat:textures/gui/bases.png",
+    "sortnum": 2
+}

@@ -4,7 +4,7 @@
     {
       "colour_1": "rust",
       "colour_2": "rust",
-      "weight": 0.10
+      "weight": 0.15
     },
     {
       "colour_1": "royal",
@@ -25,6 +25,11 @@
       "colour_1": "bitumen",
       "colour_2": "plum",
       "weight": 0.15
+    },
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.75
     }
   ]
 }

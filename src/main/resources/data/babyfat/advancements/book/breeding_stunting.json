@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "book_nether_wart": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:nether_wart"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "book_nether_wart"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

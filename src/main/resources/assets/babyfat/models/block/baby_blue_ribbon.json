@@ -3,7 +3,7 @@
 	"parent": "baby_blue_ribbon",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "baby_blue_ribbon"
+		"1": "babyfat:block/baby_blue_ribbon"
 	},
 	"elements": [
 		{

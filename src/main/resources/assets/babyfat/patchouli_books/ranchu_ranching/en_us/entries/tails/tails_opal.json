@@ -1,0 +1,20 @@
+{
+    "name": "Opaltail",
+    "advancement": "babyfat:book/tails_opal",
+    "icon": "babyfat:textures/gui/ranchu_tails/opal.png",
+    "category": "babyfat:main/tails",
+    "sortnum": 5,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:4, sizeA:1, sizeB:1, Tail:5}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Opaltail"
+        },
+        {
+            "type": "patchouli:text",
+            "text": " Found in $(opal) ranchu.",
+            "title": "Obtaining"
+        }
+    ]
+}

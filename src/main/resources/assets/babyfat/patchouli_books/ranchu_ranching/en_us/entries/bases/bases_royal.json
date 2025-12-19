@@ -1,0 +1,22 @@
+{
+    "name": "Royal",
+    "advancement": "babyfat:book/bases_royal",
+    "icon": "babyfat:textures/gui/ranchu_colors/royal.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 3,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:658079744, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Royal",
+            "rarity_text": "Rare",
+            "rarity_color": "8da7a0"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(chocolate) x $(chocolate)"
+        }
+    ]
+}

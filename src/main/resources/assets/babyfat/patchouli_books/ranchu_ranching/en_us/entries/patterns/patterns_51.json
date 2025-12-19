@@ -1,0 +1,14 @@
+{
+    "name": "Spinal Minor",
+    "advancement": "babyfat:book/patterns_51",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/51.png",
+            "type": "pattern",
+            "header_text": "Spinal Minor"
+        }
+    ]
+}

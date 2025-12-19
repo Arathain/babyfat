@@ -1,0 +1,14 @@
+{
+    "name": "Horntail",
+    "advancement": "babyfat:book/patterns_18",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/18.png",
+            "type": "pattern",
+            "header_text": "Horntail"
+        }
+    ]
+}

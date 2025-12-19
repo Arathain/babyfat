@@ -1,0 +1,17 @@
+{
+    "name": "Breeding",
+    "icon": "babyfat:water_lettuce",
+    "category": "babyfat:main/breeding",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Ranchu can be bred using $(bold)Water Lettuce$().$(br2) Upon breeding, they will produce a litter of baby ranchu. $(br2) Each baby ranchu will have a mix of traits inherited from their parents, based on their $(l:breeding/breeding_genetics)traits$()."
+        },
+        {
+            "type": "patchouli:image",
+            "text": " $(italic)Found in jungle,         savanna, and swamp     biomes.",
+            "images": ["babyfat:textures/gui/entries/water_lettuce.png"],
+            "border": true
+        }
+    ]
+}

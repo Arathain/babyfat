@@ -1,0 +1,14 @@
+{
+    "name": "Keel",
+    "advancement": "babyfat:book/patterns_23",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/23.png",
+            "type": "pattern",
+            "header_text": "Keel"
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+{
+  "display": {
+    "icon": {
+      "item": "babyfat:iron_trophy"
+    },
+    "title": {
+      "translate": "babyfat.advancement.breed_tier_3"
+    },
+    "description": {
+      "translate": "babyfat.advancement.breed_tier_3.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "babyfat:main/breed_tier_2",
+  "criteria": {
+    "breed_ranchu_rocksalt": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": -1,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": 17,
+              "p1": -1,
+              "p2": -1
+            }
+      }
+    },
+    "breed_ranchu_gold": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": -1,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": 8,
+              "p1": -1,
+              "p2": -1
+            }
+      }
+    },
+    "breed_ranchu_copper": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": -1,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": 5,
+              "p1": -1,
+              "p2": -1
+            }
+      }
+    },
+    "breed_ranchu_royal": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": -1,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": 19,
+              "p1": -1,
+              "p2": -1
+            }
+      }
+    }
+  },
+  "requirements": [
+    [
+     "breed_ranchu_gold"
+    ],
+    [
+     "breed_ranchu_rocksalt"
+    ],
+    [
+     "breed_ranchu_royal"
+    ],
+    [
+     "breed_ranchu_copper"
+    ]
+    ]
+}
+

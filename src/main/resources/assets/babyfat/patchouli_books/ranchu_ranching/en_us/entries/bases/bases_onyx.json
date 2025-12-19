@@ -1,0 +1,22 @@
+{
+    "name": "Onyx",
+    "advancement": "babyfat:book/bases_onyx",
+    "icon": "babyfat:textures/gui/ranchu_colors/onyx.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 6,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:346030082, sizeA:1, sizeB:1, Tail:4}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Onyx",
+            "rarity_text": "Legendary",
+            "rarity_color": "caacd4"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(charcoal) x $(charcoal)$(br2) Onyx ranchus have a unique $(l:main/tails)tail-shape$() that their offspring may inherit."
+        }
+    ]
+}

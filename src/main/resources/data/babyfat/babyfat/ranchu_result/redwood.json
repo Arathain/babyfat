@@ -3,6 +3,11 @@
   "crosses": [
     {
       "colour_1": "syrup",
+      "colour_2": "syrup",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "syrup",
       "colour_2": "apricot",
       "weight": 0.05
     },
@@ -45,6 +50,12 @@
       "colour_1": "ruby",
       "colour_2": "rocksalt",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.75
     }
   ]
 }

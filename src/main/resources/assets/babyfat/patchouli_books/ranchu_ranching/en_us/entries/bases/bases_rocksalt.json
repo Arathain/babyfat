@@ -1,0 +1,22 @@
+{
+    "name": "Rocksalt",
+    "advancement": "babyfat:book/bases_rocksalt",
+    "icon": "babyfat:textures/gui/ranchu_colors/rocksalt.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 3,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:588808192, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Rocksalt",
+            "rarity_text": "Rare",
+            "rarity_color": "8da7a0"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(pearl) x $(pearl)$(list)$(ginger) x $(ginger)"
+        }
+    ]
+}

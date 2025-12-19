@@ -1,0 +1,22 @@
+{
+    "name": "Opal",
+    "advancement": "babyfat:book/bases_opal",
+    "icon": "babyfat:textures/gui/ranchu_colors/opal.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 7,
+    "pages": [
+        {
+            "entity": "babyfat:ranchu{Variant:380633091, sizeA:1, sizeB:1, Tail:5}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Opal",
+            "rarity_text": "Legendary",
+            "rarity_color": "caacd4"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(azure) x $(onyx) $(br2) Opal ranchus have a unique $(l:main/tails)tail-shape$() that their offspring may inherit. $(br2)Breeding opal ranchu with each other yields a mutation into nearly all of the $(l:main/bases)base colors$()."
+        }
+    ]
+}

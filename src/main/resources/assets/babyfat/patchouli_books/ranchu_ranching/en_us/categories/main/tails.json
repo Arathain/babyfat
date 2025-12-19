@@ -1,0 +1,6 @@
+{
+    "name": "Tail-Shapes",
+    "description": "Ranchu have various tail shapes. $(br2) Some tail shapes come from $(l:bases/bases_wild)wild$() ranchu, and a few can be obtained through breeding. $(br2) All tails can be passed onto children, and their colors can change based on the traits of the parents.",
+    "icon": "babyfat:textures/gui/tails.png",
+    "sortnum": 4
+}

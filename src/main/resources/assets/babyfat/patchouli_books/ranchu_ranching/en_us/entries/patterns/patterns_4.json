@@ -1,0 +1,14 @@
+{
+    "name": "Bobtail",
+    "advancement": "babyfat:book/patterns_4",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/4.png",
+            "type": "pattern",
+            "header_text": "Bobtail"
+        }
+    ]
+}

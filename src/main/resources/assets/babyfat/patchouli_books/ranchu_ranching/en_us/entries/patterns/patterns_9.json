@@ -1,0 +1,14 @@
+{
+    "name": "Chevron",
+    "advancement": "babyfat:book/patterns_9",
+    "icon": "babyfat:textures/gui/patterns_colored.png",
+    "category": "babyfat:main/patterns",
+    "sortnum": 1,
+    "pages": [
+        {
+            "image": "babyfat:textures/gui/ranchu_patterns/9.png",
+            "type": "pattern",
+            "header_text": "Chevron"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "name": "Introduction",
+    "description": "Ranchu can be bred, and inherit various traits from their parents.",
+    "icon": "babyfat:textures/gui/breeding.png",
+    "sortnum": 1
+}

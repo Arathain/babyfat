@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "book_mushroom_island": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "minecraft:mushroom_fields"
+              }
+            }
+          }
+        ]
+      }
+    },
+  "requirements": [
+   
+    [
+      "book_mushroom_island"
+    ]
+  ]
+  }
+}
+
+

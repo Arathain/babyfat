@@ -3,6 +3,11 @@
   "crosses": [
     {
       "colour_1": "royal",
+      "colour_2": "royal",
+      "weight": 0.15
+    },
+    {
+      "colour_1": "royal",
       "colour_2": "pyrite",
       "weight": 0.15
     },
@@ -95,6 +100,12 @@
       "colour_1": "onyx",
       "colour_2": "gold",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.25
     }
   ]
 }

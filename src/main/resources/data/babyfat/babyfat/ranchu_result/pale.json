@@ -7,14 +7,99 @@
       "weight": 0.05
     },
     {
-      "colour_1": "silver",
-      "colour_2": "ivory",
-      "weight": 0.15
+      "colour_1": "chocolate",
+      "colour_2": "chocolate",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "charcoal",
+      "colour_2": "charcoal",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "copper",
+      "colour_2": "copper",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "electrum",
+      "colour_2": "electrum",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "ginger",
+      "colour_2": "ginger",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "onyx",
+      "colour_2": "onyx",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "redwood",
+      "colour_2": "redwood",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "rocksalt",
+      "colour_2": "rocksalt",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "rose",
+      "colour_2": "rose",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "ruby",
+      "colour_2": "ruby",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "azure",
+      "colour_2": "azure",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "bitumen",
+      "colour_2": "bitumen",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "rust",
+      "colour_2": "rust",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "apricot",
+      "colour_2": "apricot",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "pyrite",
+      "colour_2": "pyrite",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "syrup",
+      "colour_2": "syrup",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "plum",
+      "colour_2": "plum",
+      "weight": 0.05
+    },
+    {
+      "colour_1": "gold",
+      "colour_2": "gold",
+      "weight": 0.05
     },
     {
       "colour_1": "silver",
-      "colour_2": "pale",
-      "weight": 0.15
+      "colour_2": "silver",
+      "weight": 0.05
     },
     {
       "colour_1": "royal",
@@ -26,15 +111,11 @@
       "colour_2": "pearl",
       "weight": 0.10
     },
+
     {
-      "colour_1": "pearl",
-      "colour_2": "ivory",
-      "weight": 0.15
-    },
-    {
-      "colour_1": "pale",
-      "colour_2": "ivory",
-      "weight": 0.15
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.05
     }
   ]
 }

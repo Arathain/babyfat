@@ -1,0 +1,23 @@
+{
+    "name": "Syrup",
+    "advancement": "babyfat:book/bases_syrup",
+    "icon": "babyfat:textures/gui/ranchu_colors/syrup.png",
+    "category": "babyfat:main/bases",
+    "sortnum": 1,
+    "pages": [
+        
+        {
+            "entity": "babyfat:ranchu{Variant:796622848, sizeA:1, sizeB:1}",
+            "type": "base",
+            "offset": -0.25,
+            "header_text": "Syrup",
+            "rarity_text": "Common",
+            "rarity_color": "$(common)"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Can be bred from:",
+            "text": "$(list)$(wild) x $(wild)"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+  "display": {
+    "frame": "challenge",
+    "icon": {
+      "item": "minecraft:blue_wool"
+    },
+    "title": {
+      "translate": "babyfat.advancement.place_ribbon"
+    },
+    "description": {
+      "translate": "babyfat.advancement.place_ribbon.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "babyfat:main/breed_azure",
+  "criteria": {
+    "breed_ranchu": {
+      "trigger": "minecraft:bred_animals",
+      "conditions": {
+        "child": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "babyfat:ranchu"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
+

@@ -1,0 +1,1942 @@
+{
+  "display": {
+    "frame": "challenge",
+    "icon": {
+      "item": "babyfat:golden_paintbrush"
+    },
+    "title": {
+      "translate": "babyfat.advancement.collect_pattern"
+    },
+    "description": {
+      "translate": "babyfat.advancement.collect_pattern.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "babyfat:main/breed_pattern",
+  "criteria": {
+    "book_p1_0": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 0,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_0": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 0
+            }
+      }
+    },
+     "book_p1_1": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 1,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_1": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 1
+            }
+      }
+    },
+    "book_p1_2": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 2,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_2": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 2
+            }
+      }
+    },
+    "book_p1_3": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 3,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_3": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 3
+            }
+      }
+    },
+    "book_p1_4": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 4,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_4": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 4
+            }
+      }
+    },
+    "book_p1_5": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 5,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_5": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 5
+            }
+      }
+    },
+    "book_p1_6": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 6,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_6": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 6
+            }
+      }
+    },
+    "book_p1_7": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 7,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_7": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 7
+            }
+      }
+    },
+    "book_p1_8": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 8,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_8": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 8
+            }
+      }
+    },
+    "book_p1_9": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 9,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_9": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 9
+            }
+      }
+    },
+    "book_p1_10": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 10,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_10": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 10
+            }
+      }
+    },
+    "book_p1_11": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 11,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_11": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 11
+            }
+      }
+    },
+    "book_p1_12": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 12,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_12": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 12
+            }
+      }
+    },
+    "book_p1_13": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 13,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_13": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 13
+            }
+      }
+    },
+    "book_p1_14": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 14,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_14": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 14
+            }
+      }
+    },
+    "book_p1_15": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 15,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_15": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 15
+            }
+      }
+    },
+    "book_p1_16": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 16,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_16": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 16
+            }
+      }
+    },
+    "book_p1_17": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 17,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_17": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 17
+            }
+      }
+    },
+    "book_p1_18": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 18,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_18": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 18
+            }
+      }
+    },
+    "book_p1_19": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 19,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_19": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 19
+            }
+      }
+    },
+    "book_p1_20": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 20,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_20": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 20
+            }
+      }
+    },
+    "book_p1_21": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 21,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_21": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 21
+            }
+      }
+    },
+    "book_p1_22": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 22,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_22": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 22
+            }
+      }
+    },
+    "book_p1_23": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 23,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_23": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 23
+            }
+      }
+    },
+    "book_p1_24": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 24,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_24": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 24
+            }
+      }
+    },
+    "book_p1_25": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 25,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_25": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 25
+            }
+      }
+    },
+    "book_p1_26": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 26,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_26": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 26
+            }
+      }
+    },
+    "book_p1_27": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 27,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_27": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 27
+            }
+      }
+    },
+    "book_p1_28": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 28,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_28": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 28
+            }
+      }
+    },
+    "book_p1_29": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 29,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_29": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 29
+            }
+      }
+    },
+    "book_p1_30": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 30,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_30": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 30
+            }
+      }
+    },
+    "book_p1_31": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 31,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_31": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 31
+            }
+      }
+    },
+    "book_p1_32": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 32,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_32": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 32
+            }
+      }
+    },
+    "book_p1_33": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 33,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_33": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 33
+            }
+      }
+    },
+    "book_p1_34": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 34,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_34": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 34
+            }
+      }
+    },
+    "book_p1_35": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 35,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_35": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 35
+            }
+      }
+    },
+    "book_p1_36": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 36,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_36": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 36
+            }
+      }
+    },
+    "book_p1_37": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 37,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_37": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 37
+            }
+      }
+    },
+     "book_p1_38": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 38,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_38": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 38
+            }
+      }
+    },
+    "book_p1_39": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 39,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_39": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 39
+            }
+      }
+    },
+    "book_p1_40": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 40,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_40": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 40
+            }
+      }
+    },
+    "book_p1_41": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 41,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_41": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 41
+            }
+      }
+    },
+    "book_p1_42": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 42,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_42": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 42
+            }
+      }
+    },
+    "book_p1_43": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 43,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_43": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 43
+            }
+      }
+    },
+    "book_p1_44": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 44,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_44": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 44
+            }
+      }
+    },
+    "book_p1_45": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 45,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_45": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 45
+            }
+      }
+    },
+    "book_p1_46": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 46,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_46": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 46
+            }
+      }
+    },
+    "book_p1_47": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 47,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_47": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 47
+            }
+      }
+    },
+    "book_p1_48": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 48,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_48": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 48
+            }
+      }
+    },
+    "book_p1_49": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 49,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_49": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 49
+            }
+      }
+    },
+    "book_p1_50": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 50,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_50": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 50
+            }
+      }
+    },
+    "book_p1_51": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 51,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_51": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 51
+            }
+      }
+    },
+    "book_p1_52": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 52,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_52": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 52
+            }
+      }
+    },
+    "book_p1_53": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 53,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_53": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 53
+            }
+      }
+    },
+    "book_p1_54": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 54,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_54": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 54
+            }
+      }
+    },
+    "book_p1_55": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 55,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_55": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 55
+            }
+      }
+    },
+    "book_p1_56": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 56,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_56": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 56
+            }
+      }
+    },
+    "book_p1_57": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 57,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_57": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 57
+            }
+      }
+    },
+    "book_p1_58": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 58,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_58": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 58
+            }
+      }
+    },
+    "book_p1_59": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 59,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_59": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 59
+            }
+      }
+    },
+    "book_p1_60": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 60,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_60": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 60
+            }
+      }
+    },
+    "book_p1_61": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 61,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_61": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 61
+            }
+      }
+    },
+    "book_p1_62": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 62,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_62": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 62
+            }
+      }
+    },
+    "book_p1_63": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": 63,
+              "p2": -1
+            }
+      }
+    },
+    "book_p2_63": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": 63
+            }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "book_p1_0",
+      "book_p2_0"
+    ],
+    [
+      "book_p1_1",
+      "book_p2_1"
+    ],
+    [
+      "book_p1_2",
+      "book_p2_2"
+    ],
+    [
+      "book_p1_3",
+      "book_p2_3"
+    ],
+    [
+      "book_p1_4",
+      "book_p2_4"
+    ],
+    [
+      "book_p1_5",
+      "book_p2_5"
+    ],
+    [
+      "book_p1_6",
+      "book_p2_6"
+    ],
+    [
+      "book_p1_7",
+      "book_p2_7"
+    ],
+    [
+      "book_p1_8",
+      "book_p2_8"
+    ],
+    [
+      "book_p1_9",
+      "book_p2_9"
+    ],
+    [
+      "book_p1_10",
+      "book_p2_10"
+    ],
+    [
+      "book_p1_11",
+      "book_p2_11"
+    ],
+    [
+      "book_p1_12",
+      "book_p2_12"
+    ],
+    [
+      "book_p1_13",
+      "book_p2_13"
+    ],
+    [
+      "book_p1_14",
+      "book_p2_14"
+    ],
+    [
+      "book_p1_15",
+      "book_p2_15"
+    ],
+    [
+      "book_p1_16",
+      "book_p2_16"
+    ],
+    [
+      "book_p1_17",
+      "book_p2_17"
+    ],
+    [
+      "book_p1_18",
+      "book_p2_18"
+    ],
+    [
+      "book_p1_19",
+      "book_p2_19"
+    ],
+    [
+      "book_p1_20",
+      "book_p2_20"
+    ],
+    [
+      "book_p1_21",
+      "book_p2_21"
+    ],
+    [
+      "book_p1_22",
+      "book_p2_22"
+    ],
+    [
+      "book_p1_23",
+      "book_p2_23"
+    ],
+    [
+      "book_p1_24",
+      "book_p2_24"
+    ],
+    [
+      "book_p1_25",
+      "book_p2_25"
+    ],
+    [
+      "book_p1_26",
+      "book_p2_26"
+    ],
+    [
+      "book_p1_27",
+      "book_p2_27"
+    ],
+    [
+      "book_p1_28",
+      "book_p2_28"
+    ],
+    [
+      "book_p1_29",
+      "book_p2_29"
+    ],
+    [
+      "book_p1_30",
+      "book_p2_30"
+    ],
+    [
+      "book_p1_31",
+      "book_p2_31"
+    ],
+    [
+      "book_p1_32",
+      "book_p2_32"
+    ],
+    [
+      "book_p1_33",
+      "book_p2_33"
+    ],
+    [
+      "book_p1_34",
+      "book_p2_34"
+    ],
+    [
+      "book_p1_35",
+      "book_p2_35"
+    ],
+    [
+      "book_p1_36",
+      "book_p2_36"
+    ],
+    [
+      "book_p1_37",
+      "book_p2_37"
+    ],
+    [
+      "book_p1_38",
+      "book_p2_38"
+    ],
+    [
+      "book_p1_39",
+      "book_p2_39"
+    ],
+    [
+      "book_p1_40",
+      "book_p2_40"
+    ],
+    [
+      "book_p1_41",
+      "book_p2_41"
+    ],
+    [
+      "book_p1_42",
+      "book_p2_42"
+    ],
+    [
+      "book_p1_43",
+      "book_p2_43"
+    ],
+    [
+      "book_p1_44",
+      "book_p2_44"
+    ],
+    [
+      "book_p1_45",
+      "book_p2_45"
+    ],
+    [
+      "book_p1_46",
+      "book_p2_46"
+    ],
+    [
+      "book_p1_47",
+      "book_p2_47"
+    ],
+    [
+      "book_p1_48",
+      "book_p2_48"
+    ],
+    [
+      "book_p1_49",
+      "book_p2_49"
+    ],
+    [
+      "book_p1_50",
+      "book_p2_50"
+    ],
+    [
+      "book_p1_51",
+      "book_p2_51"
+    ],
+    [
+      "book_p1_52",
+      "book_p2_52"
+    ],
+    [
+      "book_p1_53",
+      "book_p2_53"
+    ],
+    [
+      "book_p1_54",
+      "book_p2_54"
+    ],
+    [
+      "book_p1_55",
+      "book_p2_55"
+    ],
+    [
+      "book_p1_56",
+      "book_p2_56"
+    ],
+    [
+      "book_p1_57",
+      "book_p2_57"
+    ],
+    [
+      "book_p1_58",
+      "book_p2_58"
+    ],
+    [
+      "book_p1_59",
+      "book_p2_59"
+    ],
+    [
+      "book_p1_60",
+      "book_p2_60"
+    ],
+    [
+      "book_p1_61",
+      "book_p2_61"
+    ],
+    [
+      "book_p1_62",
+      "book_p2_62"
+    ],
+    [
+      "book_p1_63",
+      "book_p2_63"
+    ]
+    ]
+}

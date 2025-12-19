@@ -2,6 +2,11 @@
   "colour": "azure",
   "crosses": [
     {
+      "colour_1": "ruby",
+      "colour_2": "ruby",
+      "weight": 0.15
+    },
+    {
       "colour_1": "azure",
       "colour_2": "royal",
       "weight": 0.15

@@ -2,6 +2,11 @@
   "colour": "rose",
   "crosses": [
     {
+      "colour_1": "rocksalt",
+      "colour_2": "rocksalt",
+      "weight": 0.15
+    },
+    {
       "colour_1": "copper",
       "colour_2": "ginger",
       "weight": 0.15
@@ -35,6 +40,12 @@
       "colour_1": "ruby",
       "colour_2": "plum",
       "weight": 0.15
+    },
+
+    {
+      "colour_1": "opal",
+      "colour_2": "opal",
+      "weight": 0.25
     }
   ]
 }

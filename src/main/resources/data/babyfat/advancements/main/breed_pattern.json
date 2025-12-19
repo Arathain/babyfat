@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "babyfat:paintbrush"
+    },
+    "title": {
+      "translate": "babyfat.advancement.breed_pattern"
+    },
+    "description": {
+      "translate": "babyfat.advancement.breed_pattern.desc"
+    },
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "babyfat:main/breed_mutate",
+  "criteria": {
+    "breed_pattern": {
+      "trigger": "babyfat:ranchu_sex",
+      "conditions": {
+        "data": {
+              "same_colour": 0,
+              "golden_crown": -1,
+              "tail": -1,
+              "base_colour": -1,
+              "p1": -1,
+              "p2": -1
+            }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "breed_pattern"
+    ]
+    ]
+}
+
