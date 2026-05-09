@@ -28,7 +28,6 @@ public class RanchuSexTrigger extends SimpleCriterionTrigger<RanchuSexTrigger.Tr
     }
 
     public RanchuSexTrigger.TriggerInstance createInstance(JsonObject pJson, ContextAwarePredicate pPredicate, DeserializationContext pDeserializationContext) {
-        System.out.println("please work");
         JsonObject o = pJson.getAsJsonObject("data");
         int a = GsonHelper.convertToInt(o.getAsJsonPrimitive("same_colour"), "value");
         int b = GsonHelper.convertToInt(o.getAsJsonPrimitive("golden_crown"), "value");

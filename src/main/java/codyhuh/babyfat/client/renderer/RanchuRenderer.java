@@ -4,6 +4,7 @@ import codyhuh.babyfat.BabyFat;
 import codyhuh.babyfat.client.ModModelLayers;
 import codyhuh.babyfat.client.model.RanchuModel;
 import codyhuh.babyfat.common.entities.Ranchu;
+import codyhuh.babyfat.mixin.TextureImageAccessor;
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -215,7 +216,7 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 		NativeImage out = null;
 		if (cbt instanceof SimpleTexture s) {
 			try {
-				out = s.getTextureImage(Minecraft.getInstance().getResourceManager()).getImage();
+				out = ((TextureImageAccessor)s).babyfat$invokeGetTextureImage(Minecraft.getInstance().getResourceManager()).getImage();
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}

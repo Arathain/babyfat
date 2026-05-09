@@ -104,7 +104,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 	@Nullable
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor worldIn, DifficultyInstance difficultyIn, MobSpawnType reason, @Nullable SpawnGroupData spawnDataIn, @Nullable CompoundTag dataTag) {
-
+		SpawnGroupData g = super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
 		if (reason == MobSpawnType.BUCKET && dataTag != null && dataTag.contains("Variant", 3)) {
 
 			this.setSizeA(dataTag.getFloat("sizeA"));
@@ -119,8 +119,8 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			this.setCanGrowUp(dataTag.getBoolean("CanGrowUp"));
 
 		} else {
-
-			if (getVariant() != -1) {
+			int variant = getVariant();
+			if (variant > 0) {
 				return spawnDataIn;
 			}
 			int wCIndex = RanchuSexResolver.RanchuColour.WILD.ordinal();
@@ -128,9 +128,9 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			int base = 4;
 			int pat1 = random.nextInt(64);
 			int pat2 = random.nextInt(64);
-			int baseColour = wCIndex;
-			int c1 = wCIndex;
-			int c2 = wCIndex;
+			int baseColour = 24;
+			int c1 = 24;
+			int c2 = 24;
 
 			i = base + (pat1 << 3) + (pat2 << 3+6) + (baseColour << 3+6+6) + (c1 << 3+6+6+5) + (c2 << 3+6+6+5+5);
 			this.setTail(random.nextInt(3));
@@ -140,11 +140,11 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
 			this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
 			reloadSize();
-            BabyFat.LOGGER.info("{} {}  {} {}", base, pat1, pat2, baseColour);
+            BabyFat.LOGGER.info("summoned random: {}  {} {}  {}", base, pat1, pat2, baseColour);
 
 		}
 
-		return super.finalizeSpawn(worldIn, difficultyIn, reason, spawnDataIn, dataTag);
+		return g;
 	}
 
 	public static boolean checkFishSpawnRules(EntityType<? extends Ranchu> type, LevelAccessor worldIn, MobSpawnType reason, BlockPos p_223363_3_, RandomSource randomIn) {
