@@ -161,9 +161,12 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 	public ResourceLocation getTextureLocation(T entity) {
 		int ego = entity.getVariant();
 		if(ego == -1) {
-			ego = 0;
+			ego = 4;
 		}
 		int base = (2*2*2-1 & ego);
+        if (base != 0) {
+            ego = base;
+        }
 		int pat1 = (2*2*2*2*2*2-1 & ego >> 3);
 		int pat2 = (2*2*2*2*2*2-1 & ego >> 3+6);
 		int c1 = (2*2*2*2*2-1 & ego >> 3+6+6+5);
@@ -202,7 +205,9 @@ public class RanchuRenderer<T extends Ranchu> extends MobRenderer<T, RanchuModel
 			ResourceLocation loc = id("ranchu_" + ego);
 			t.register(loc, new DynamicTexture(baseImage));
 			TEXTURE_LOOKUP.put(ego, loc);
+            BabyFat.LOGGER.info("{} {}  {} {}", base, pat1, pat2, ego);
 		}
+
 		return TEXTURE_LOOKUP.get(ego);
 	}
 

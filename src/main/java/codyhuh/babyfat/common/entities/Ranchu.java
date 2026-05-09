@@ -118,7 +118,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 
 			this.setCanGrowUp(dataTag.getBoolean("CanGrowUp"));
 
-		}else {
+		} else {
 
 			if (getVariant() != -1) {
 				return spawnDataIn;
@@ -140,6 +140,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 			this.setSizeA(MIN_SIZE+gA*gA*(MAX_SIZE-MIN_SIZE));
 			this.setSizeB(MIN_SIZE+gB*gB*(MAX_SIZE-MIN_SIZE));
 			reloadSize();
+            BabyFat.LOGGER.info("{} {}  {} {}", base, pat1, pat2, baseColour);
 
 		}
 
@@ -417,16 +418,18 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 				baseColour = c1 = c2 = mutated[0];
 				base = 0;
 			}
+
 			BabyFat.LOGGER.info("Child conceived: \n" + "base: " + base + "\npattern 1: " + pat1 + "\npattern 2: " + pat2 + "\nbasecolour: " + baseColour + getColourName(baseColour)
 			+ "\ncolour 1: " + c1 + getColourName(c1) + "\ncolour 2: " + c2 + getColourName(c2) + "\nmutated: " + (mutated[0] != -1));
+
+			child.setTail(random.nextBoolean() ? this.getTail() : r.getTail());
 
             if(mutated[0] != -1) {
                 base = child.validateSpecial(RanchuSexResolver.RanchuColour.values()[baseColour].name().toLowerCase(), base);
             }
-
             child.setVariant(base + (pat1 << 3) + (pat2 << 3 + 6) + (baseColour << 3 + 6 + 6) + (c1 << 3 + 6 + 6 + 5) + (c2 << 3 + 6 + 6 + 5 + 5));
 
-			if(w.getBiome(this.blockPosition()).is(Tags.Biomes.IS_MUSHROOM) && random.nextFloat() > 0.6f) {
+			if(w.getBiome(this.blockPosition()).is(Tags.Biomes.IS_MUSHROOM)) {
 				child.setSizeA(Math.max(this.getSizeA(), ((Ranchu) ranchuB).getSizeA()));
 				child.setSizeB(Math.max(this.getSizeB(), ((Ranchu) ranchuB).getSizeB()));
 				child.reloadSize();
@@ -479,6 +482,7 @@ public class Ranchu extends AbstractRanchu implements Bucketable {
 
 	public RanchuSexResolver.RanchuColour getBaseColour() {
 		int ego = this.getVariant();
+		ego = Math.max(ego, RanchuSexResolver.RanchuColour.values().length);
 		return RanchuSexResolver.RanchuColour.values()[(2 * 2 * 2 * 2 * 2 - 1 & ego >> 3 + 6 + 6)];
 	}
 
